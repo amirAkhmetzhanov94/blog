@@ -4,9 +4,15 @@ from django.db import models
 class Type(models.Model):
     title = models.CharField(max_length=20, null=False, blank=False, verbose_name='Title')
 
+    def __str__(self):
+        return f'{self.title}'
+
 
 class Status(models.Model):
     title = models.CharField(max_length=20, null=False, blank=False, verbose_name='Title')
+
+    def __str__(self):
+        return f'{self.title}'
 
 
 class Issue(models.Model):
@@ -16,3 +22,6 @@ class Issue(models.Model):
     type = models.ForeignKey('webapp.Type', on_delete=models.PROTECT, verbose_name='Type', related_name='issues')
     creation_time = models.DateTimeField(auto_now_add=True, verbose_name='Creation time')
     update_time = models.DateTimeField(auto_now=True, verbose_name='Update time')
+
+    def __str__(self):
+        return f'{self.summary}'
