@@ -1,0 +1,170 @@
+[
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "title": "Task"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 2,
+  "fields": {
+    "title": "Bug"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "title": "Enhancement"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 1,
+  "fields": {
+    "title": "New"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 2,
+  "fields": {
+    "title": "In Progress"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 3,
+  "fields": {
+    "title": "Done"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 1,
+  "fields": {
+    "summary": "Task 1",
+    "description": "This is task 1",
+    "status": 1,
+    "type": 1,
+    "creation_time": "2021-09-15T22:40:03.123Z",
+    "update_time": "2021-09-15T22:40:03.123Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 2,
+  "fields": {
+    "summary": "Task 2",
+    "description": "This is task 2",
+    "status": 2,
+    "type": 1,
+    "creation_time": "2021-09-15T22:41:07.926Z",
+    "update_time": "2021-09-15T22:41:07.926Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 3,
+  "fields": {
+    "summary": "Task 3",
+    "description": "This is task 3",
+    "status": 3,
+    "type": 1,
+    "creation_time": "2021-09-15T22:41:20.588Z",
+    "update_time": "2021-09-15T22:41:20.588Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 4,
+  "fields": {
+    "summary": "Bug 1",
+    "description": "This is bug 1",
+    "status": 1,
+    "type": 2,
+    "creation_time": "2021-09-15T22:41:45.728Z",
+    "update_time": "2021-09-15T22:41:45.728Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 5,
+  "fields": {
+    "summary": "Bug 2",
+    "description": "This is bug 2",
+    "status": 2,
+    "type": 2,
+    "creation_time": "2021-09-15T22:41:59.737Z",
+    "update_time": "2021-09-15T22:41:59.737Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 6,
+  "fields": {
+    "summary": "Bug 3",
+    "description": "This is bug 3",
+    "status": 3,
+    "type": 2,
+    "creation_time": "2021-09-15T22:42:13.376Z",
+    "update_time": "2021-09-15T22:42:13.376Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 7,
+  "fields": {
+    "summary": "Enhancement 1",
+    "description": "This is Enhancement 1",
+    "status": 1,
+    "type": 3,
+    "creation_time": "2021-09-15T22:42:38.503Z",
+    "update_time": "2021-09-15T22:42:43.589Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 8,
+  "fields": {
+    "summary": "Enhancement 2",
+    "description": "This is Enhancement 2",
+    "status": 2,
+    "type": 3,
+    "creation_time": "2021-09-15T22:42:57.213Z",
+    "update_time": "2021-09-15T22:42:58.977Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 9,
+  "fields": {
+    "summary": "Enhancement 3",
+    "description": "This is Enhancement 3",
+    "status": 3,
+    "type": 3,
+    "creation_time": "2021-09-15T22:43:10.978Z",
+    "update_time": "2021-09-15T22:43:10.978Z"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$vm92yvDn7iCDk3pVpbLfo3$OBPnDVSbtt7ehTIr/TJaBCsK1Le40hW4PL8+7xpuhM0=",
+    "last_login": "2021-09-15T21:54:47.125Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-09-15T21:54:29.714Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
