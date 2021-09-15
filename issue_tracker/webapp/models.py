@@ -24,4 +24,4 @@ class Issue(models.Model):
     update_time = models.DateTimeField(auto_now=True, verbose_name='Update time')
 
     def __str__(self):
-        return f'{self.summary}'
+        return f'{self.summary} ({self.status}, {self.type})'
