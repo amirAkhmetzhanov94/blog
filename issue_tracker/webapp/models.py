@@ -2,11 +2,11 @@ from django.db import models
 
 
 class Type(models.Model):
-    title = models.CharField(max_length=20, null=False, blank=False)
+    title = models.CharField(max_length=20, null=False, blank=False, verbose_name='Title')
 
 
 class Status(models.Model):
-    title = models.CharField(max_length=20, null=False, blank=False)
+    title = models.CharField(max_length=20, null=False, blank=False, verbose_name='Title')
 
 
 class Issue(models.Model):
