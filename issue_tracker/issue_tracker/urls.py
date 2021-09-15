@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from webapp import views as webview
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', webview.IndexView.as_view(), name='index')
 ]

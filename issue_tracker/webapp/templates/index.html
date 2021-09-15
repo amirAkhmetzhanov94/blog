@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Main page{% endblock %}
+
+{% block content %}
+    <h1 class="main_page">Issues</h1>
+    <div class="row mt-5">
+    {% for issue in issues %}
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <p class="card-text">{{ issue.summary }}</p>
+              </div>
+            </div>
+          </div>
+    {% endfor %}
+    </div>
+{% endblock %}
