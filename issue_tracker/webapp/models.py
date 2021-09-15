@@ -1,3 +1,18 @@
 from django.db import models
 
-# Create your models here.
+
+class Type(models.Model):
+    title = models.CharField(max_length=20, null=False, blank=False)
+
+
+class Status(models.Model):
+    title = models.CharField(max_length=20, null=False, blank=False)
+
+
+class Issue(models.Model):
+    summary = models.CharField(max_length=2000, null=False, blank=False, verbose_name='Summary')
+    description = models.TextField(blank=True, null=True, verbose_name='Description')
+    status = models.ForeignKey('webapp.Status', on_delete=models.PROTECT, verbose_name='Status', related_name='issues')
+    type = models.ForeignKey('webapp.Type', on_delete=models.PROTECT, verbose_name='Type', related_name='issues')
+    creation_time = models.DateTimeField(auto_now_add=True, verbose_name='Creation time')
+    update_time = models.DateTimeField(auto_now=True, verbose_name='Update time')
