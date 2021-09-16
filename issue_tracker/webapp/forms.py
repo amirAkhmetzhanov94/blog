@@ -6,7 +6,7 @@ special_attributes = {"class": "form-control"}
 
 
 class IssueForm(forms.Form):
-    summary = forms.CharField(max_length=2000, required=True, label='Summary',
+    summary = forms.CharField(max_length=30, required=True, label='Summary',
                               widget=widgets.Input(attrs=special_attributes))
     description = forms.CharField(max_length=2000, label='Description',
                                   widget=widgets.Textarea(attrs=special_attributes))

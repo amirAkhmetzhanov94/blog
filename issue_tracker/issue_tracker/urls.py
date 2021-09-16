@@ -20,5 +20,6 @@ from webapp import views as webview
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', webview.IndexView.as_view(), name='index'),
-    path('issue/<int:issue_pk>/', webview.IssueView.as_view(), name='issue_detail')
+    path('issue/<int:issue_pk>/', webview.IssueView.as_view(), name='issue_detail'),
+    path('issue/add/', webview.AddIssue.as_view(), name="issue_add")
 ]
