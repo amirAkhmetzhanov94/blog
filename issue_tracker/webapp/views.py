@@ -38,3 +38,30 @@ class AddIssue(View):
             return redirect('issue_detail', issue_pk=issue.pk)
         else:
             return render(request, 'issue_create.html', {"form": form})
+
+
+class UpdateIssue(View):
+    def get(self, request, *args, **kwargs):
+        issue = get_object_or_404(Issue, pk=kwargs['pk'])
+        form = IssueForm(initial={
+            'summary': issue.summary,
+            'description': issue.description,
+            'status': issue.status,
+            'type': issue.type,
+        })
+        return render(request, "issue_update.html", context={"form": form,
+                                                             "issue": issue})
+
+    def post(self, request, *args, **kwargs):
+        form = IssueForm(data=request.POST)
+        issue = get_object_or_404(Issue, pk=kwargs['pk'])
+        if form.is_valid():
+            issue.summary = form.cleaned_data["summary"]
+            issue.description = form.cleaned_data["description"]
+            issue.status = form.cleaned_data["status"]
+            issue.type = form.cleaned_data["type"]
+            issue.save()
+            return redirect('issue_detail', issue_pk=issue.pk)
+        else:
+            return render(request, 'issue_update.html', context={'form': form,
+                                                                 'issue': issue})
