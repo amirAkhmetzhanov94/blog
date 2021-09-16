@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}
+    Delete Issue
+{% endblock %}
+
+{% block content %}
+        <div class="container">
+            <h1 class="text-center">Are you sure want to delete issue "{{ issue.summary }}"?</h1>
+            <form method="POST" action="{% url "issue_delete" issue.pk %}" class="text-center">
+            {% csrf_token %}
+                <div class="row">
+                    <div class="col text-center">
+                            <p><input class="btn btn-primary btn-lg btn-block mt-3" type="submit" value="Yes"></p>
+                            <p><input class="btn btn-secondary btn-lg btn-block" type="button" value="No" onclick='location
+                            .href="{% url "index" %}"'></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+{% endblock %}
