@@ -9,3 +9,8 @@ body {
 nav{
     margin-bottom: 50px;
 }
+
+h1.main_page{
+    margin-bottom: 50px;
+    text-align: center;
+}
