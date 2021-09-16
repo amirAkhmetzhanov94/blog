@@ -6,7 +6,10 @@ from webapp.forms import IssueForm
 
 class IndexView(TemplateView):
     template_name = 'index.html'
-    extra_context = {'issues': Issue.objects.all()}
+
+    def get_context_data(self, **kwargs):
+        extra_context = {'issues': Issue.objects.all()}
+        return extra_context
 
 
 class IssueView(TemplateView):
