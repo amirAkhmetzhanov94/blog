@@ -32,12 +32,13 @@ class AddIssue(View):
     def post(self, request, *args, **kwargs):
         form = self.form_class(data=request.POST)
         if form.is_valid():
+            type = form.cleaned_data.pop('type')
             issue = Issue.objects.create(
                 summary=form.cleaned_data["summary"],
                 description=form.cleaned_data["description"],
                 status=form.cleaned_data["status"],
-                type=form.cleaned_data["type"]
             )
+            issue.type.set(type)
             return redirect('issue_detail', issue_pk=issue.pk)
         else:
             return render(request, 'issue_create.html', {"form": form})
@@ -50,7 +51,7 @@ class UpdateIssue(View):
             'summary': issue.summary,
             'description': issue.description,
             'status': issue.status,
-            'type': issue.type,
+            'type': issue.type.all(),
         })
         return render(request, "issue_update.html", context={"form": form,
                                                              "issue": issue})
@@ -59,11 +60,12 @@ class UpdateIssue(View):
         form = IssueForm(data=request.POST)
         issue = get_object_or_404(Issue, pk=kwargs['pk'])
         if form.is_valid():
+            type = form.cleaned_data.pop('type')
             issue.summary = form.cleaned_data["summary"]
             issue.description = form.cleaned_data["description"]
             issue.status = form.cleaned_data["status"]
-            issue.type = form.cleaned_data["type"]
             issue.save()
+            issue.type.set(type)
             return redirect('issue_detail', issue_pk=issue.pk)
         else:
             return render(request, 'issue_update.html', context={'form': form,
