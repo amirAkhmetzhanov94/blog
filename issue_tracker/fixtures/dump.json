@@ -10,14 +10,14 @@
   "model": "webapp.type",
   "pk": 2,
   "fields": {
-    "title": "Bug"
+    "title": "Enhancement"
   }
 },
 {
   "model": "webapp.type",
   "pk": 3,
   "fields": {
-    "title": "Enhancement"
+    "title": "Bug"
   }
 },
 {
@@ -46,11 +46,13 @@
   "pk": 1,
   "fields": {
     "summary": "Task 1",
-    "description": "This is task 1",
+    "description": "This is a task 1 in a new model",
     "status": 1,
-    "type": 1,
-    "creation_time": "2021-09-15T22:40:03.123Z",
-    "update_time": "2021-09-15T22:40:03.123Z"
+    "creation_time": "2021-09-19T16:22:00.484Z",
+    "update_time": "2021-09-19T16:22:00.484Z",
+    "type": [
+      1
+    ]
   }
 },
 {
@@ -58,11 +60,13 @@
   "pk": 2,
   "fields": {
     "summary": "Task 2",
-    "description": "This is task 2",
+    "description": "This is a task 2 in the new model",
     "status": 2,
-    "type": 1,
-    "creation_time": "2021-09-15T22:41:07.926Z",
-    "update_time": "2021-09-15T22:41:07.926Z"
+    "creation_time": "2021-09-19T16:22:58.375Z",
+    "update_time": "2021-09-19T16:22:58.375Z",
+    "type": [
+      1
+    ]
   }
 },
 {
@@ -70,91 +74,105 @@
   "pk": 3,
   "fields": {
     "summary": "Task 3",
-    "description": "This is task 3",
+    "description": "This is a task 3 in the new model",
     "status": 3,
-    "type": 1,
-    "creation_time": "2021-09-15T22:41:20.588Z",
-    "update_time": "2021-09-15T22:41:20.588Z"
+    "creation_time": "2021-09-19T16:23:25.656Z",
+    "update_time": "2021-09-19T16:23:25.656Z",
+    "type": [
+      1
+    ]
   }
 },
 {
   "model": "webapp.issue",
   "pk": 4,
   "fields": {
-    "summary": "Bug 1",
-    "description": "This is bug 1",
+    "summary": "Enhancement 1",
+    "description": "This is an enhancement 1 in the new model",
     "status": 1,
-    "type": 2,
-    "creation_time": "2021-09-15T22:41:45.728Z",
-    "update_time": "2021-09-15T22:41:45.728Z"
+    "creation_time": "2021-09-19T16:23:49.004Z",
+    "update_time": "2021-09-19T16:24:16.598Z",
+    "type": [
+      2
+    ]
   }
 },
 {
   "model": "webapp.issue",
   "pk": 5,
   "fields": {
-    "summary": "Bug 2",
-    "description": "This is bug 2",
+    "summary": "Enhancement 2",
+    "description": "This is an enhancement 2 in the new model",
     "status": 2,
-    "type": 2,
-    "creation_time": "2021-09-15T22:41:59.737Z",
-    "update_time": "2021-09-15T22:41:59.737Z"
+    "creation_time": "2021-09-19T16:24:10.483Z",
+    "update_time": "2021-09-19T16:24:10.483Z",
+    "type": [
+      2
+    ]
   }
 },
 {
   "model": "webapp.issue",
   "pk": 6,
   "fields": {
-    "summary": "Bug 3",
-    "description": "This is bug 3",
+    "summary": "Enhancement 3",
+    "description": "This is an enhancement 3 in the new model",
     "status": 3,
-    "type": 2,
-    "creation_time": "2021-09-15T22:42:13.376Z",
-    "update_time": "2021-09-15T22:42:13.376Z"
+    "creation_time": "2021-09-19T16:24:39.303Z",
+    "update_time": "2021-09-19T16:24:39.303Z",
+    "type": [
+      2
+    ]
   }
 },
 {
   "model": "webapp.issue",
   "pk": 7,
   "fields": {
-    "summary": "Enhancement 1",
-    "description": "This is Enhancement 1",
+    "summary": "Bug 1",
+    "description": "This is a bug 1 in the new model",
     "status": 1,
-    "type": 3,
-    "creation_time": "2021-09-15T22:42:38.503Z",
-    "update_time": "2021-09-15T22:42:43.589Z"
+    "creation_time": "2021-09-19T16:24:55.994Z",
+    "update_time": "2021-09-19T16:24:55.994Z",
+    "type": [
+      3
+    ]
   }
 },
 {
   "model": "webapp.issue",
   "pk": 8,
   "fields": {
-    "summary": "Enhancement 2",
-    "description": "This is Enhancement 2",
+    "summary": "Bug 2",
+    "description": "This is a bug 2 in the new model",
     "status": 2,
-    "type": 3,
-    "creation_time": "2021-09-15T22:42:57.213Z",
-    "update_time": "2021-09-15T22:42:58.977Z"
+    "creation_time": "2021-09-19T16:25:12.483Z",
+    "update_time": "2021-09-19T16:25:12.483Z",
+    "type": [
+      3
+    ]
   }
 },
 {
   "model": "webapp.issue",
   "pk": 9,
   "fields": {
-    "summary": "Enhancement 3",
-    "description": "This is Enhancement 3",
+    "summary": "Bug 3",
+    "description": "This is a bug 3 in the new model",
     "status": 3,
-    "type": 3,
-    "creation_time": "2021-09-15T22:43:10.978Z",
-    "update_time": "2021-09-15T22:43:10.978Z"
+    "creation_time": "2021-09-19T16:25:27.697Z",
+    "update_time": "2021-09-19T16:25:27.697Z",
+    "type": [
+      3
+    ]
   }
 },
 {
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$260000$vm92yvDn7iCDk3pVpbLfo3$OBPnDVSbtt7ehTIr/TJaBCsK1Le40hW4PL8+7xpuhM0=",
-    "last_login": "2021-09-15T21:54:47.125Z",
+    "password": "pbkdf2_sha256$260000$bdcv1Gci9mpHidB4cEDW9A$UodHf+Nr2zCc+TdSYz/D/y0oD05mX+erN12MATRT3V4=",
+    "last_login": "2021-09-19T16:20:22.298Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -162,7 +180,7 @@
     "email": "admin@admin.ru",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2021-09-15T21:54:29.714Z",
+    "date_joined": "2021-09-19T16:20:11.208Z",
     "groups": [],
     "user_permissions": []
   }
