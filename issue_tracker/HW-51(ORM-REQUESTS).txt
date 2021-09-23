@@ -1,0 +1,9 @@
+1. 
+issue = Issue.objects.filter(status_id=3)
+issue.filter(update_time__range=((timezone.now()-timedelta(days=30)), timezone.now()))
+
+2.
+Issue.objects.filter(Q(status_id__in=([2,3]))&Q(type__in=([2,3]))).distinct()
+
+3.
+Issue.objects.filter(Q(summary__icontains="bug")|Q(type=3)).exclude(status_id=3)
