@@ -1,16 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import View, TemplateView, FormView
+from django.views.generic import View, TemplateView, FormView, ListView
 from webapp.models import Type, Status, Issue
 from webapp.forms import IssueForm
 from django.urls import reverse
 
 
-class IndexView(TemplateView):
+class IndexView(ListView):
+    model = Issue
     template_name = 'index.html'
-
-    def get_context_data(self, **kwargs):
-        extra_context = {'issues': Issue.objects.all()}
-        return extra_context
+    context_object_name = 'issues'
+    ordering = "-update_time"
 
 
 class IssueView(TemplateView):
