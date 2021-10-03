@@ -19,3 +19,7 @@ p.error_msg{
     color: darkred;
     font-weight: bold;
 }
+
+div.pagination{
+    justify-content: right;
+}

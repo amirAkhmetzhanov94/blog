@@ -10,6 +10,7 @@ class IndexView(ListView):
     template_name = 'index.html'
     context_object_name = 'issues'
     ordering = "-update_time"
+    paginate_by = 10
 
 
 class IssueView(TemplateView):
@@ -31,7 +32,6 @@ class AddIssue(FormView):
 
     def get_success_url(self):
         return reverse("issue_detail", kwargs={"issue_pk": self.issue.pk})
-
 
 
 class UpdateIssue(FormView):
