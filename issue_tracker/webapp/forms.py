@@ -16,3 +16,7 @@ class IssueForm(forms.ModelForm):
     class Meta:
         exclude = ["creation_time", "update_time"]
         model = Issue
+
+
+class SearchForm(forms.Form):
+    search = forms.CharField(max_length=100, required=False, label="Search")
