@@ -9,7 +9,7 @@ from django.db.models import Q
 
 class IndexView(ListView):
     model = Issue
-    template_name = 'index.html'
+    template_name = 'issues/index.html'
     context_object_name = 'issues'
     ordering = "-update_time"
     paginate_by = 10
@@ -42,7 +42,7 @@ class IndexView(ListView):
 
 
 class IssueView(TemplateView):
-    template_name = 'issue_detail.html'
+    template_name = 'issues/detail.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -51,7 +51,7 @@ class IssueView(TemplateView):
 
 
 class AddIssue(FormView):
-    template_name = 'issue_create.html'
+    template_name = 'issues/create.html'
     form_class = IssueForm
 
     def form_valid(self, form):
@@ -63,7 +63,7 @@ class AddIssue(FormView):
 
 
 class UpdateIssue(FormView):
-    template_name = "issue_update.html"
+    template_name = "issues/update.html"
     form_class = IssueForm
 
     def dispatch(self, request, *args, **kwargs):
@@ -95,7 +95,7 @@ class UpdateIssue(FormView):
 class DeleteIssue(View):
     def get(self, request, *args, **kwargs):
         issue = get_object_or_404(Issue, pk=kwargs['pk'])
-        return render(request, 'issue_delete.html', context={'issue': issue})
+        return render(request, 'issues/delete.html', context={'issue': issue})
 
     def post(self, request, *args, **kwargs):
         issue = get_object_or_404(Issue, pk=kwargs['pk'])

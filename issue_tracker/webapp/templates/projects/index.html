@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Main page{% endblock %}
+
+{% block content %}
+    <h1 class="main_page">Projects</h1>
+    <div class="row row-cols-1 row-cols-md-2">
+    {% for project in project_list %}
+        <div class="col mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#">{{ project.project_name }}</a></h5>
+                  <p class="card-text">{{ project.project_summary }}</p>
+                  <p class="card-text"><small class="text-muted">Starting date: {{ project.start_date }}</small></p>
+                  <p class="card-text"><small class="text-muted">Deadline: {{ project.finish_date }}</small></p>
+                </div>
+              </div>
+        </div>
+    {% empty %}
+        <p>No tasks found</p>
+    {% endfor %}
+    </div>
+{% endblock %}
