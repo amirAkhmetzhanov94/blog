@@ -50,7 +50,7 @@ class Issue(models.Model):
     type = models.ManyToManyField('webapp.Type', related_name='issues')
     creation_time = models.DateTimeField(auto_now_add=True, verbose_name='Creation time')
     update_time = models.DateTimeField(auto_now=True, verbose_name='Update time')
-    task_id = models.ForeignKey('Project', on_delete=models.CASCADE, null=True)
+    task = models.ForeignKey('Project', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return f'{self.summary} ({self.status}, {self.type.get()})'
