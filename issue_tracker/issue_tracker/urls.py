@@ -25,5 +25,6 @@ urlpatterns = [
     path('issue/edit/<int:pk>/', webview.UpdateIssue.as_view(), name="issue_update"),
     path('issue/delete/<int:pk>', webview.DeleteIssue.as_view(), name="issue_delete"),
     path('projects-list/', webview.ProjectListView.as_view(), name='project_list'),
-    path('detailed/<int:pk>', webview.ProjectDetailedView.as_view(), name='project_detail')
+    path('detailed/<int:pk>', webview.ProjectDetailedView.as_view(), name='project_detail'),
+    path('project/add', webview.ProjectCreateView.as_view(), name='project_add')
 ]
