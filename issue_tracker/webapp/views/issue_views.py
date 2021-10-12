@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import View, TemplateView, FormView, ListView
-from webapp.models import Type, Status, Issue
+from django.views.generic import TemplateView, FormView, ListView, DeleteView
+from webapp.models import Type, Status, Issue, Project
 from django.utils.http import urlencode
 from webapp.forms import IssueForm, SearchForm
 from django.urls import reverse
@@ -89,15 +89,16 @@ class UpdateIssue(FormView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse("issue_detail", kwargs={"issue_pk": self.issue.pk})
+        return reverse("project_detail", kwargs={"pk": self.issue.task.pk})
 
 
-class DeleteIssue(View):
-    def get(self, request, *args, **kwargs):
-        issue = get_object_or_404(Issue, pk=kwargs['pk'])
-        return render(request, 'issues/delete.html', context={'issue': issue})
+class DeleteIssue(DeleteView):
+    template_name = 'issues/delete.html'
+    form_class = IssueForm
+    model = Issue
+    context_object_name = 'issues'
 
-    def post(self, request, *args, **kwargs):
-        issue = get_object_or_404(Issue, pk=kwargs['pk'])
-        issue.delete()
-        return redirect('index')
+    def get_success_url(self):
+        id = self.kwargs.get("pk")
+        project = get_object_or_404(Issue, pk=id)
+        return reverse('project_detail', kwargs={"pk": project.task.pk})
