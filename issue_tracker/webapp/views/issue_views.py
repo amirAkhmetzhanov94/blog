@@ -89,7 +89,7 @@ class UpdateIssue(FormView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse("project_detail", kwargs={"pk": self.issue.task.pk})
+        return reverse("project_detail", kwargs={"pk": self.issue.project.pk})
 
 
 class DeleteIssue(DeleteView):
@@ -101,4 +101,4 @@ class DeleteIssue(DeleteView):
     def get_success_url(self):
         id = self.kwargs.get("pk")
         project = get_object_or_404(Issue, pk=id)
-        return reverse('project_detail', kwargs={"pk": project.task.pk})
+        return reverse('project_detail', kwargs={"pk": project.project.pk})
