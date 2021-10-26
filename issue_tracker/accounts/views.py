@@ -18,6 +18,6 @@ class LoginView(View):
 
 
 class LogoutView(View):
-    def post(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         logout(request)
         return redirect("index")

@@ -21,7 +21,7 @@ from webapp import views as webview
 
 urlpatterns = [
     path('accounts/login/', accounts.views.LoginView.as_view(), name='login'),
-    path("accounts/logout/", accounts.views.LogoutView.as_view(), name="logout"),
+    path('accounts/logout/', accounts.views.LogoutView.as_view(), name="logout"),
     path('admin/', admin.site.urls),
     path('', webview.IndexView.as_view(), name='index'),
     path('issue/<int:issue_pk>/', webview.IssueView.as_view(), name='issue_detail'),
