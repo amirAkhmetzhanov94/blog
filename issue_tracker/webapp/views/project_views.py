@@ -2,7 +2,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from webapp.models import Project, Issue
 from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect
-from webapp.forms import IssueForm
+from webapp.forms import IssueForm, ProjectForm
 
 
 class ProjectListView(ListView):
@@ -23,7 +23,7 @@ class ProjectDetailedView(DetailView):
 class ProjectCreateView(CreateView):
     model = Project
     template_name = 'projects/create.html'
-    fields = ['start_date', 'finish_date', 'project_name', 'project_summary']
+    form_class = ProjectForm
 
     def form_valid(self, form):
         self.object = form.save()
@@ -36,7 +36,7 @@ class ProjectCreateView(CreateView):
 class ProjectCreateIssue(CreateView):
     model = Issue
     template_name = "issues/create.html"
-    fields = ["summary", "description", "status", "type", "project"]
+    fields = ["summary", "description", "status", "type"]
 
     def form_valid(self, form):
         pk = self.kwargs.get("pk")
@@ -44,4 +44,4 @@ class ProjectCreateIssue(CreateView):
         issue = form.save(commit=False)
         issue.project = project
         issue.save()
-        return redirect("project_detail", pk=project.pk )
+        return redirect("project_detail", pk=project.pk)

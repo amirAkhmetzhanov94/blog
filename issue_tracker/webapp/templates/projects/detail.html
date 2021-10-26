@@ -1,9 +1,40 @@
-{% extends "base.html" %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="background-color: #4a4a4a">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'index' %}">Issue Tracker</a>
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'project_list' %}">Projects list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'project_add' %}">Create a new project</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'project_add_issue' project.pk %}">Add a new issue</a>
+          </li>
+        {% include "partial/search_form.html" %}
+        </ul>
+      </div>
+</nav>
 
-{% block title %}{{ project.title }}{% endblock %}
-
-{% block content %}
-    <div class="product-detail">
+    <div class="container">
+            <div class="product-detail">
         <h1>{{ project.project_name }}</h1><br>
         <p><b>Description</b>: {{ project.project_summary }}</p>
         <p><b>Started at</b>: {{ project.start_date }}</p>
@@ -27,4 +58,12 @@
         <h4 class="container text-center mt-5">No tasks found</h4>
     {% endfor %}
     </div>
-{% endblock %}
+    </div>
+    <div>
+        <hr class="my-5">
+    </div>
+    <div class="container mt-5 mb-5">
+        <p>Copyright &#169; Your Website 2021</p>
+    </div>
+</body>
+</html>
