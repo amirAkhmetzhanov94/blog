@@ -3,7 +3,7 @@ from webapp.models import Project, Issue
 from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect
 from webapp.forms import IssueForm, ProjectForm
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class ProjectListView(ListView):
     model = Project
@@ -20,7 +20,7 @@ class ProjectDetailedView(DetailView):
         return context
 
 
-class ProjectCreateView(CreateView):
+class ProjectCreateView(LoginRequiredMixin, CreateView):
     model = Project
     template_name = 'projects/create.html'
     form_class = ProjectForm
@@ -33,7 +33,7 @@ class ProjectCreateView(CreateView):
         return reverse('project_list')
 
 
-class ProjectCreateIssue(CreateView):
+class ProjectCreateIssue(LoginRequiredMixin, CreateView):
     model = Issue
     template_name = "issues/create.html"
     fields = ["summary", "description", "status", "type"]

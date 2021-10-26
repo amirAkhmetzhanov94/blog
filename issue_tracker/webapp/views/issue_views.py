@@ -1,11 +1,11 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, FormView, ListView, DeleteView
-from webapp.models import Type, Status, Issue, Project
+from webapp.models import Issue
 from django.utils.http import urlencode
 from webapp.forms import IssueForm, SearchForm
 from django.urls import reverse
 from django.db.models import Q
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class IndexView(ListView):
     model = Issue
@@ -50,7 +50,7 @@ class IssueView(TemplateView):
         return context
 
 
-class AddIssue(FormView):
+class AddIssue(LoginRequiredMixin, FormView):
     template_name = 'issues/create.html'
     form_class = IssueForm
 
@@ -62,7 +62,7 @@ class AddIssue(FormView):
         return reverse("issue_detail", kwargs={"issue_pk": self.issue.pk})
 
 
-class UpdateIssue(FormView):
+class UpdateIssue(LoginRequiredMixin, FormView):
     template_name = "issues/update.html"
     form_class = IssueForm
 
@@ -92,7 +92,7 @@ class UpdateIssue(FormView):
         return reverse("project_detail", kwargs={"pk": self.issue.project.pk})
 
 
-class DeleteIssue(DeleteView):
+class DeleteIssue(LoginRequiredMixin, DeleteView):
     template_name = 'issues/delete.html'
     form_class = IssueForm
     model = Issue

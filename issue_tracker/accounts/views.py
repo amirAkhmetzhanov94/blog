@@ -1,4 +1,4 @@
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import redirect, render
 from django.views.generic import View
 
@@ -15,3 +15,9 @@ class LoginView(View):
             login(request, user)
             return redirect("index")
         return render(request, "registration/login.html", {"has_error": True})
+
+
+class LogoutView(View):
+    def post(self, request, *args, **kwargs):
+        logout(request)
+        return redirect("index")
