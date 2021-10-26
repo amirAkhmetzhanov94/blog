@@ -23,3 +23,12 @@ p.error_msg{
 div.pagination{
     justify-content: right;
 }
+
+input.login-form{
+    max-width: 20%;
+    margin-left: 450px;
+    align-content: center;
+}
+p.form-error{
+    color: red;
+}

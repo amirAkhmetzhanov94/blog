@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from webapp import views as webview
+from accounts.views import LoginView
 
 urlpatterns = [
+    path('accounts/login', LoginView.as_view(), name='login'),
     path('admin/', admin.site.urls),
     path('', webview.IndexView.as_view(), name='index'),
     path('issue/<int:issue_pk>/', webview.IssueView.as_view(), name='issue_detail'),
