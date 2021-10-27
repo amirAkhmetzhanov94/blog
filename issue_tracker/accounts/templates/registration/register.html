@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<h1>Register</h1><br>
+<form action="{% url "accounts:register" %}" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="hidden" name="next" value="{{ request.GET.next }}">
+    <button class="btn btn-primary">Register</button>
+</form>
+{% endblock %}

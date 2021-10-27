@@ -38,6 +38,7 @@
            </li>
        {% else %}
            <li class="menu-right"><a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}" class="nav-link">Login</a></li>
+           <li class="menu-right"><a href="{% url 'accounts:register' %}?next={{ request.get_full_path }}" class="nav-link">Register</a></li>
        {% endif %}
         {% include "partial/search_form.html" %}
         </ul>
