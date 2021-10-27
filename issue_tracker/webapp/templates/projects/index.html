@@ -9,7 +9,7 @@
         <div class="col mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><a href="{% url 'project_detail' project.pk %}">{{ project.project_name }}</a></h5>
+                    <h5 class="card-title"><a href="{% url 'webapp:project_detail' project.pk %}">{{ project.project_name }}</a></h5>
                   <p class="card-text">{{ project.project_summary }}</p>
                   <p class="card-text"><small class="text-muted">Starting date: {{ project.start_date }}</small></p>
                   <p class="card-text"><small class="text-muted">Deadline: {{ project.finish_date }}</small></p>

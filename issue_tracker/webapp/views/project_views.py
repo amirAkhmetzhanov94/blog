@@ -30,7 +30,7 @@ class ProjectCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('project_list')
+        return reverse('webapp:project_list')
 
 
 class ProjectCreateIssue(LoginRequiredMixin, CreateView):
@@ -44,4 +44,4 @@ class ProjectCreateIssue(LoginRequiredMixin, CreateView):
         issue = form.save(commit=False)
         issue.project = project
         issue.save()
-        return redirect("project_detail", pk=project.pk)
+        return redirect("webapp:project_detail", pk=project.pk)

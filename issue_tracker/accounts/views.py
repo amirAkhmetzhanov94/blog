@@ -13,11 +13,11 @@ class LoginView(View):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("index")
+            return redirect("webapp:index")
         return render(request, "registration/login.html", {"has_error": True})
 
 
 class LogoutView(View):
     def get(self, request, *args, **kwargs):
         logout(request)
-        return redirect("index")
+        return redirect("webapp:index")

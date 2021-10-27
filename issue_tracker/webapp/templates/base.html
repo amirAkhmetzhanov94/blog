@@ -14,30 +14,30 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="background-color: #4a4a4a">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'index' %}">Issue Tracker</a>
+      <a class="navbar-brand" href="{% url 'webapp:index' %}">Issue Tracker</a>
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'index' %}">Issues list<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{% url 'webapp:index' %}">Issues list<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'project_list' %}">Projects list</a>
+            <a class="nav-link" href="{% url 'webapp:project_list' %}">Projects list</a>
           </li>
              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Menu
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{% url 'project_add' %}">Create a new project</a>
-                  <a class="dropdown-item" href="{% url 'issue_add' %}">Create a new issue</a>
+                  <a class="dropdown-item" href="{% url 'webapp:project_add' %}">Create a new project</a>
+                  <a class="dropdown-item" href="{% url 'webapp:issue_add' %}">Create a new issue</a>
                 </div>
              </li>
         {% if user.is_authenticated %}
            {% block menu_links %}{% endblock %}
            <li class="nav-item">
-               <a class="nav-link" href="{% url 'logout' %}">Logout [{{ user.username }}]</a>
+               <a class="nav-link" href="{% url 'accounts:logout' %}">Logout [{{ user.username }}]</a>
            </li>
        {% else %}
-           <li class="menu-right"><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+           <li class="menu-right"><a href="{% url 'accounts:login' %}" class="nav-link">Login</a></li>
        {% endif %}
         {% include "partial/search_form.html" %}
         </ul>

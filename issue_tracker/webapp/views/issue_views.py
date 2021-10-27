@@ -59,7 +59,7 @@ class AddIssue(LoginRequiredMixin, FormView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse("issue_detail", kwargs={"issue_pk": self.issue.pk})
+        return reverse("webapp:issue_detail", kwargs={"issue_pk": self.issue.pk})
 
 
 class UpdateIssue(LoginRequiredMixin, FormView):
@@ -89,7 +89,7 @@ class UpdateIssue(LoginRequiredMixin, FormView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse("project_detail", kwargs={"pk": self.issue.project.pk})
+        return reverse("webapp:project_detail", kwargs={"pk": self.issue.project.pk})
 
 
 class DeleteIssue(LoginRequiredMixin, DeleteView):
@@ -101,4 +101,4 @@ class DeleteIssue(LoginRequiredMixin, DeleteView):
     def get_success_url(self):
         id = self.kwargs.get("pk")
         project = get_object_or_404(Issue, pk=id)
-        return reverse('project_detail', kwargs={"pk": project.project.pk})
+        return reverse('webapp:project_detail', kwargs={"pk": project.project.pk})

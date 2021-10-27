@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Edit product</h1>
-        <form action="{% url 'issue_update' issue.pk%}" method="post">
+    <h1>Edit issue</h1>
+        <form action="{% url 'webapp:issue_update' issue.pk%}" method="post">
             {% include 'partial/issue_form.html' %}
           <button class="btn btn-primary mt-3">Edit</button>
         </form>
