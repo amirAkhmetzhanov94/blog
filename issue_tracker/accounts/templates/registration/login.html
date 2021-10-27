@@ -17,6 +17,7 @@
             <label for="password" class="form-label">Password:</label>
             <input class="form-control login-form" type="password" name="password" id="password">
         </div>
+        <input type="hidden" name="next" value="{{ request.GET.next }}">
         <button class="btn btn-primary" type="submit">Enter</button>
     </form>
 {% endblock %}
