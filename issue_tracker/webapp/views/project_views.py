@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404, redirect
 from webapp.forms import IssueForm, ProjectForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+
 class ProjectListView(ListView):
     model = Project
     template_name = 'projects/index.html'
@@ -17,6 +18,8 @@ class ProjectDetailedView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["issues"] = Issue.objects.filter(project=self.object.pk)
+        project_users = self.get_object().users.all()
+        context["project_users"] = project_users
         return context
 
 

@@ -5,6 +5,7 @@ from django.views.generic import View, CreateView
 from django.http import HttpResponseRedirect
 from accounts.forms import RegistrationForm
 
+
 class LoginView(View):
     def get(self, request, *args, **kwargs):
         return render(request, "registration/login.html")

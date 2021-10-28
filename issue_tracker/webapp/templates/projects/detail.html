@@ -51,6 +51,8 @@
         <p><b>Description</b>: {{ project.project_summary }}</p>
         <p><b>Started at</b>: {{ project.start_date }}</p>
         <p><b>Deadline</b>: {{ project.finish_date }}</p>
+        <p><b>Participants</b>: {% for user in project_users %}{% if forloop.last %}{{ user }}.{% else %}{{ user }},
+        {% endif %}{% empty %}No participants found.{% endfor %}</p>
     </div>
 
     <div class="row row-cols-1 row-cols-md-2">
