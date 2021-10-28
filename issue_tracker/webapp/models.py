@@ -1,6 +1,7 @@
 from django.core.validators import BaseValidator
 from django.db import models
 from django.utils.deconstruct import deconstructible
+from django.contrib.auth.models import User
 
 
 @deconstructible
@@ -61,6 +62,7 @@ class Project(models.Model):
     finish_date = models.DateField(blank=True)
     project_name = models.CharField(max_length=30)
     project_summary = models.TextField()
+    users = models.ManyToManyField(User)
 
     def __str__(self):
         return f'{self.project_name}'
