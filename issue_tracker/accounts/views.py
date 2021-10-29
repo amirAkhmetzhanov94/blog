@@ -1,8 +1,7 @@
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render, reverse, get_object_or_404
-from django.urls import reverse_lazy
-from django.views.generic import View, CreateView, DeleteView, TemplateView
+from django.views.generic import View, CreateView
 from django.http import HttpResponseRedirect
 from accounts.forms import RegistrationForm
 from webapp.models import Project
@@ -62,10 +61,31 @@ class RemoveFromProjectView(View):
 
     def post(self, request, *args, **kwargs):
         project_id = kwargs.get("project_pk")
-        project = Project.objects.get(id=project_id)
+        project = get_object_or_404(Project, id=project_id)
         user_id = request.POST.get("user_id")
-        user = User.objects.get(id=user_id)
+        user = get_object_or_404(User, id=user_id)
         choice = request.POST.get("choice")
         if choice == "Yes":
             project.users.remove(user)
         return redirect("webapp:project_detail", pk=project.pk)
+
+
+class AddToProjectView(View):
+    template_name = 'registration/add.html'
+
+    def get(self, request, *args, **kwargs):
+        project_id = kwargs.get("project_pk")
+        project = get_object_or_404(Project, id=project_id)
+        return render(request, self.template_name, {"project": project})
+
+    def post(self, request, *args, **kwargs):
+        project_id = kwargs.get("project_pk")
+        project = get_object_or_404(Project, id=project_id)
+        user_request = request.POST.get("user_id")
+        user = None
+        try:
+            user = User.objects.get(username=user_request)
+            project.users.add(user)
+            return redirect("webapp:project_detail", pk=project.pk)
+        except User.DoesNotExist as n:
+            return render(request, self.template_name, {"project": project, "error": n})

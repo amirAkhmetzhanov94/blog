@@ -56,7 +56,10 @@
             {% for user in project_users %}{{ user }}
                   <button class="remove_user bi bi-person-x" name="user_id" value="{{ user.pk }}"></button>{% if forloop.last %}.
             {% else %},
-            {% endif %}{% empty %}No participants found.{% endfor %}</p></form>
+            {% endif %}{% empty %}No participants found.{% endfor %}</form>
+                <form action="{% url 'webapp:project_add_user' project.pk %}" method="get">
+                    <button class="btn btn-primary btn-sm">Add a new user <i class="bi bi-person-plus"></i></button>
+                </form></p>
     </div>
 
     <div class="row row-cols-1 row-cols-md-2">
