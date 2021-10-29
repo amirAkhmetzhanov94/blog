@@ -47,4 +47,9 @@ class ProjectCreateIssue(LoginRequiredMixin, CreateView):
         issue = form.save(commit=False)
         issue.project = project
         issue.save()
-        return redirect("webapp:project_detail", pk=project.pk)
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        pk = self.kwargs.get("pk")
+        project = get_object_or_404(Project, pk=pk)
+        return reverse("webapp:project_detail", kwargs={"pk": project.pk})
