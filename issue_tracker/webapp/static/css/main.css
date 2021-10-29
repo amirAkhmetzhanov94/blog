@@ -32,3 +32,10 @@ input.login-form{
 p.form-error{
     color: red;
 }
+
+button.remove_user{
+    border: none;
+    background-color: transparent;
+    color: orangered;
+    padding: 0;
+}

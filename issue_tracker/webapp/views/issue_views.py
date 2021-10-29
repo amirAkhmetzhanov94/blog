@@ -7,6 +7,7 @@ from django.urls import reverse
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+
 class IndexView(ListView):
     model = Issue
     template_name = 'issues/index.html'
