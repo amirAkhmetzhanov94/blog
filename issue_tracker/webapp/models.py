@@ -63,6 +63,8 @@ class Project(models.Model):
     project_name = models.CharField(max_length=30)
     project_summary = models.TextField()
     users = models.ManyToManyField(User)
+    author = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1, related_name='authors',
+                               verbose_name='Author')
 
     def __str__(self):
         return f'{self.project_name}'
