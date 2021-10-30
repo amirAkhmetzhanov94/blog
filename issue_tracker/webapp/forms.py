@@ -29,7 +29,7 @@ class ProjectForm(forms.ModelForm):
     project_summary = forms.CharField(widget=widgets.Textarea(attrs=special_attributes))
 
     class Meta:
-        exclude = []
+        exclude = ['author']
         model = Project
 
 
