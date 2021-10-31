@@ -3,7 +3,7 @@ from webapp.models import Project, Issue
 from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect
 from webapp.forms import IssueForm, ProjectForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 
 
 class ProjectListView(ListView):
@@ -23,23 +23,29 @@ class ProjectDetailedView(DetailView):
         return context
 
 
-class ProjectCreateView(LoginRequiredMixin, CreateView):
+class ProjectCreateView(PermissionRequiredMixin, CreateView):
     model = Project
     template_name = 'projects/create.html'
     form_class = ProjectForm
+    permission_required = "webapp.add_project"
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        self.object = form.save()
         return super().form_valid(form)
 
     def get_success_url(self):
         return reverse('webapp:project_list')
 
 
-class ProjectCreateIssue(LoginRequiredMixin, CreateView):
+class ProjectCreateIssue(UserPassesTestMixin, CreateView):
     model = Issue
     template_name = "issues/create.html"
     fields = ["summary", "description", "status", "type"]
+
+    def test_func(self):
+        pk = self.kwargs.get("pk")
+        project = get_object_or_404(Project, pk=pk)
+        return self.request.user in project.users.all() or self.request.user.has_perm("webapp.add_issue")
 
     def form_valid(self, form):
         pk = self.kwargs.get("pk")

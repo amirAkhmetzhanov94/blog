@@ -5,6 +5,7 @@ from django.views.generic import View, CreateView
 from django.http import HttpResponseRedirect
 from accounts.forms import RegistrationForm
 from webapp.models import Project
+from django.contrib.auth.mixins import UserPassesTestMixin, PermissionRequiredMixin
 
 
 class LoginView(View):
@@ -49,8 +50,15 @@ class RegisterView(CreateView):
         return next_url
 
 
-class RemoveFromProjectView(View):
+class RemoveFromProjectView(UserPassesTestMixin, View):
     template_name = 'registration/remove.html'
+
+    def get_object(self):
+        pk = self.kwargs.get("project_pk")
+        return Project.objects.get(pk=pk)
+
+    def test_func(self):
+        return self.request.user.has_perm('webapp.change_project') and self.request.user in self.get_object().users.all()
 
     def get(self, request, *args, **kwargs):
         project_id = kwargs.get("project_pk")
@@ -70,8 +78,16 @@ class RemoveFromProjectView(View):
         return redirect("webapp:project_detail", pk=project.pk)
 
 
-class AddToProjectView(View):
+class AddToProjectView(UserPassesTestMixin, View):
     template_name = 'registration/add.html'
+
+    def get_object(self):
+        pk = self.kwargs.get("project_pk")
+        return Project.objects.get(pk=pk)
+
+    def test_func(self):
+        return self.request.user in self.get_object().users.all() and self.request.user.has_perm('webapp.change_project')
+
 
     def get(self, request, *args, **kwargs):
         project_id = kwargs.get("project_pk")

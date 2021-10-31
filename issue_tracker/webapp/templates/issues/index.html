@@ -10,8 +10,12 @@
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title"><a href="{% url 'webapp:issue_detail' issue.pk %}">{{ issue.summary }}</a>
+                    {% if perms.webapp.change_issue and request.user in issue.project.users.all %}
                     <a href="{% url 'webapp:issue_update' issue.pk %}" class="bi bi-pencil-square"></a>
-                    <a href="{% url 'webapp:issue_delete' issue.pk %}" class="bi bi-file-earmark-minus"></a></h5>
+                    {% endif %}
+                    {% if perms.webapp.delete_issue and request.user in issue.project.users.all %}
+                    <a href="{% url 'webapp:issue_delete' issue.pk %}" class="bi bi-file-earmark-minus"></a>
+                    {% endif %}</h5>
                   <p class="card-text">{{ issue.description }}</p>
                   <p class="card-text"><small class="text-muted">Last updated {{ issue.update_time }}</small></p>
                 </div>

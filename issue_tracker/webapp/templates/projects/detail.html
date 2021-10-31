@@ -1,52 +1,9 @@
+{% extends 'base.html' %}
 {% load static %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
-    <title>{% block title %}{% endblock %}</title>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="background-color: #4a4a4a">
-    <div class="container">
-      <a class="navbar-brand" href="{% url 'webapp:index' %}">Issue Tracker</a>
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'webapp:index' %}">Issues list<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'webapp:project_list' %}">Projects list</a>
-          </li>
-             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Menu
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{% url 'webapp:project_add' %}">Create a new project</a>
-                  <a class="dropdown-item" href="{% url 'webapp:project_add_issue' project.pk %}">Create a new issue</a>
-                </div>
-             </li>
-                    {% if user.is_authenticated %}
-           {% block menu_links %}{% endblock %}
-           <li class="nav-item">
-               <a class="nav-link" href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}">Logout [{{ user.username }}]</a>
-           </li>
-       {% else %}
-           <li class="menu-right"><a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}" class="nav-link">Login</a></li>
-           <li class="menu-right"><a href="{% url 'accounts:register' %}?next={{ request.get_full_path }}" class="nav-link">Register</a></li>
-       {% endif %}
-        {% include "partial/search_form.html" %}
-        </ul>
-      </div>
-</nav>
 
-    <div class="container">
-            <div class="product-detail">
+{% block title %}Details{% endblock %}
+{% block content %}
+    <div class="product-detail">
         <h1>{{ project.project_name }}</h1><br>
         <p><b>Description</b>: {{ project.project_summary }}</p>
         <p><b>Started at</b>: {{ project.start_date }}</p>
@@ -54,12 +11,16 @@
         <form action="{% url 'webapp:project_remove_user' project.pk %}" method="get">
             <p><b>Participants</b>:
             {% for user in project_users %}{{ user }}
-                  <button class="remove_user bi bi-person-x" name="user_id" value="{{ user.pk }}"></button>{% if forloop.last %}.
-            {% else %},
+               {% if perms.webapp.change_project and request.user in project.users.all %}
+                <button class="remove_user bi bi-person-x" name="user_id" value="{{ user.pk }}"></button>
+                {% endif %}
+            {% if forloop.last %}.{% else %},
             {% endif %}{% empty %}No participants found.{% endfor %}</form>
                 <form action="{% url 'webapp:project_add_user' project.pk %}" method="get">
-                    <button class="btn btn-primary btn-sm">Add a new user <i class="bi bi-person-plus"></i></button>
-                </form></p>
+                    {% if perms.webapp.change_project and request.user in project.users.all %}
+                    <button class="btn btn-primary btn-sm mb-3" >Add a new user <i class="bi bi-person-plus"></i></button>
+                    {% endif %}
+                </form>
     </div>
 
     <div class="row row-cols-1 row-cols-md-2">
@@ -68,8 +29,13 @@
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title"><a href="{% url 'webapp:issue_detail' issue.pk %}">{{ issue.summary }}</a>
+                    {% if perms.webapp.change_issue and request.user in project.users.all %}
                     <a href="{% url 'webapp:issue_update' issue.pk %}" class="bi bi-pencil-square"></a>
-                    <a href="{% url 'webapp:issue_delete' issue.pk %}" class="bi bi-file-earmark-minus"></a></h5>
+                    {% endif %}
+                    {% if perms.webapp.delete_issue and request.user in project.users.all %}
+                    <a href="{% url 'webapp:issue_delete' issue.pk %}" class="bi bi-file-earmark-minus"></a>
+                    {% endif %}
+                </h5>
                   <p class="card-text">{{ issue.description }}</p>
                   <p class="card-text"><small class="text-muted">Last updated {{ issue.update_time }}</small></p>
                 </div>
@@ -79,14 +45,4 @@
         <h4 class="container text-center mt-5">No tasks found</h4>
     {% endfor %}
     </div>
-    </div>
-    <div>
-        <hr class="my-5">
-    </div>
-    <div class="container mt-5 mb-5">
-        <p>Copyright &#169; Your Website 2021</p>
-    </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock %}

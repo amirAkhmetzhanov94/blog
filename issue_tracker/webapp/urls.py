@@ -16,5 +16,5 @@ urlpatterns = [
     path('project/<int:pk>/issue/add', webview.ProjectCreateIssue.as_view(), name='project_add_issue'),
     path('project/<int:project_pk>/account/remove/',
          RemoveFromProjectView.as_view(), name='project_remove_user'),
-    path('project/<int:project_pk>/account/add', AddToProjectView.as_view(), name='project_add_user')
+    path('project/<int:project_pk>/account/add/', AddToProjectView.as_view(), name='project_add_user')
 ]

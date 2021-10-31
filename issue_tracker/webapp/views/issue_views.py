@@ -1,11 +1,11 @@
 from django.shortcuts import get_object_or_404
-from django.views.generic import TemplateView, FormView, ListView, DeleteView
+from django.views.generic import TemplateView, FormView, ListView, DeleteView, CreateView, UpdateView
 from webapp.models import Issue
 from django.utils.http import urlencode
 from webapp.forms import IssueForm, SearchForm
 from django.urls import reverse
 from django.db.models import Q
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import UserPassesTestMixin, PermissionRequiredMixin
 
 
 class IndexView(ListView):
@@ -42,6 +42,16 @@ class IndexView(ListView):
             return self.form.cleaned_data["search"]
 
 
+class AddIssue(PermissionRequiredMixin, CreateView):
+    template_name = 'issues/create.html'
+    form_class = IssueForm
+    model = Issue
+    permission_required = "webapp.add_issue"
+
+    def get_success_url(self):
+        print(self.object.project.pk)
+        return reverse("webapp:index")
+
 class IssueView(TemplateView):
     template_name = 'issues/detail.html'
 
@@ -51,53 +61,30 @@ class IssueView(TemplateView):
         return context
 
 
-class AddIssue(LoginRequiredMixin, FormView):
-    template_name = 'issues/create.html'
-    form_class = IssueForm
-
-    def form_valid(self, form):
-        self.issue = form.save()
-        return super().form_valid(form)
-
-    def get_success_url(self):
-        return reverse("webapp:issue_detail", kwargs={"issue_pk": self.issue.pk})
-
-
-class UpdateIssue(LoginRequiredMixin, FormView):
+class UpdateIssue(UserPassesTestMixin, UpdateView):
     template_name = "issues/update.html"
     form_class = IssueForm
+    model = Issue
 
-    def dispatch(self, request, *args, **kwargs):
-        self.issue = self.get_object()
-        return super().dispatch(request, *args, **kwargs)
-
-    def get_object(self):
+    def test_func(self):
         pk = self.kwargs.get("pk")
-        return get_object_or_404(Issue, pk=pk)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["issue"] = self.issue
-        return context
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs["instance"] = self.issue
-        return kwargs
-
-    def form_valid(self, form):
-        self.issue = form.save()
-        return super().form_valid(form)
+        issue = get_object_or_404(Issue, pk=pk)
+        return self.request.user in issue.project.users.all() and self.request.user.has_perm("webapp.change_issue")
 
     def get_success_url(self):
-        return reverse("webapp:project_detail", kwargs={"pk": self.issue.project.pk})
+        return reverse("webapp:project_detail", kwargs={"pk": self.object.project.pk})
 
 
-class DeleteIssue(LoginRequiredMixin, DeleteView):
+class DeleteIssue(UserPassesTestMixin, DeleteView):
     template_name = 'issues/delete.html'
     form_class = IssueForm
     model = Issue
     context_object_name = 'issues'
+
+    def test_func(self):
+        pk = self.kwargs.get("pk")
+        issue = get_object_or_404(Issue, pk=pk)
+        return self.request.user in issue.project.users.all() and self.request.user.has_perm("webapp.delete_issue")
 
     def get_success_url(self):
         id = self.kwargs.get("pk")
