@@ -1,9 +1,9 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from webapp.models import Project, Issue
 from django.urls import reverse
-from django.shortcuts import get_object_or_404, redirect
-from webapp.forms import IssueForm, ProjectForm
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
+from django.shortcuts import get_object_or_404
+from webapp.forms import ProjectForm
+from django.contrib.auth.mixins import UserPassesTestMixin, PermissionRequiredMixin
 
 
 class ProjectListView(ListView):
@@ -70,7 +70,7 @@ class ProjectCreateIssue(UserPassesTestMixin, CreateView):
     def test_func(self):
         pk = self.kwargs.get("pk")
         project = get_object_or_404(Project, pk=pk)
-        return self.request.user in project.users.all() or self.request.user.has_perm("webapp.add_issue")
+        return self.request.user in project.users.all() and self.request.user.has_perm("webapp.add_issue")
 
     def form_valid(self, form):
         pk = self.kwargs.get("pk")

@@ -22,7 +22,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'webapp:project_list' %}">Projects list</a>
           </li>
-         {% if perms.webapp.add_project or perms.webapp.add_issue or request.user in project.users.all %}
+         {% if perms.webapp.add_project or perms.webapp.add_issue and request.user in project.users.all %}
              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Menu
@@ -31,8 +31,11 @@
                 {% if perms.webapp.add_project %}
                   <a class="dropdown-item" href="{% url 'webapp:project_add' %}">Create a new project</a>
                 {% endif %}
-                    {% if perms.webapp.add_issue or request.user in project.users.all %}
-                  <a class="dropdown-item" href="{% block add_issue_method %}{% url 'webapp:issue_add' %}{% endblock %}">Create a new issue</a>
+                 {% if perms.webapp.add_issue and request.user in project.users.all %}
+                  <a class="dropdown-item" href="
+                    {% block add_issue_method %}{% url 'webapp:issue_add' %}{% endblock %}">
+                      Create a new issue
+                  </a>
                     {% endif %}
                 </div>
              {% endif %}

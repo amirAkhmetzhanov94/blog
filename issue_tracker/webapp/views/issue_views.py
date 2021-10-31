@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from django.views.generic import TemplateView, FormView, ListView, DeleteView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, DeleteView, CreateView, UpdateView
 from webapp.models import Issue
 from django.utils.http import urlencode
 from webapp.forms import IssueForm, SearchForm

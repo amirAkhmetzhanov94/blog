@@ -12,13 +12,13 @@
         <form action="{% url 'webapp:project_remove_user' project.pk %}" method="get">
             <p><b>Participants</b>:
             {% for user in project_users %}{{ user }}
-               {% if perms.webapp.change_project and request.user in project.users.all %}
+               {% if perms.auth.delete_user and request.user in project.users.all %}
                 <button class="remove_user bi bi-person-x" name="user_id" value="{{ user.pk }}"></button>
                 {% endif %}
             {% if forloop.last %}.{% else %},
             {% endif %}{% empty %}No participants found.{% endfor %}</form>
                 <form action="{% url 'webapp:project_add_user' project.pk %}" method="get">
-                    {% if perms.webapp.change_project and request.user in project.users.all %}
+                    {% if perms.auth.add_user and request.user in project.users.all %}
                     <button class="btn btn-primary btn-sm mb-3" >Add a new user <i class="bi bi-person-plus"></i></button>
                     {% endif %}
                 </form>
