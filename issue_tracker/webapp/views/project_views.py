@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from webapp.models import Project, Issue
 from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect
@@ -35,6 +35,31 @@ class ProjectCreateView(PermissionRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse('webapp:project_list')
+
+
+class ProjectDeleteView(UserPassesTestMixin, DeleteView):
+    template_name = 'projects/delete.html'
+    model = Project
+    context_object_name = 'project'
+
+    def test_func(self):
+        return self.request.user.has_perm("webapp.delete_project")
+
+    def get_success_url(self):
+        return reverse("webapp:project_list")
+
+
+class ProjectUpdateView(UserPassesTestMixin, UpdateView):
+    template_name = 'projects/update.html'
+    model = Project
+    context_object_name = 'project'
+    form_class = ProjectForm
+
+    def test_func(self):
+        return self.request.user.has_perm("webapp.change_project")
+
+    def get_success_url(self):
+        return reverse("webapp:project_detail", kwargs={"pk": self.object.pk})
 
 
 class ProjectCreateIssue(UserPassesTestMixin, CreateView):

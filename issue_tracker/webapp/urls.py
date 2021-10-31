@@ -13,6 +13,8 @@ urlpatterns = [
     path('projects-list/', webview.ProjectListView.as_view(), name='project_list'),
     path('detailed/<int:pk>', webview.ProjectDetailedView.as_view(), name='project_detail'),
     path('project/add', webview.ProjectCreateView.as_view(), name='project_add'),
+    path('project/delete/<int:pk>', webview.ProjectDeleteView.as_view(), name='project_delete'),
+    path('project/update/<int:pk>', webview.ProjectUpdateView.as_view(), name='project_update'),
     path('project/<int:pk>/issue/add', webview.ProjectCreateIssue.as_view(), name='project_add_issue'),
     path('project/<int:project_pk>/account/remove/',
          RemoveFromProjectView.as_view(), name='project_remove_user'),
