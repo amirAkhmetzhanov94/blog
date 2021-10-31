@@ -32,7 +32,7 @@
                   <a class="dropdown-item" href="{% url 'webapp:project_add' %}">Create a new project</a>
                 {% endif %}
                     {% if perms.webapp.add_issue or request.user in project.users.all %}
-                  <a class="dropdown-item" href="{% url 'webapp:issue_add' %}">Create a new issue</a>
+                  <a class="dropdown-item" href="{% block add_issue_method %}{% url 'webapp:issue_add' %}{% endblock %}">Create a new issue</a>
                     {% endif %}
                 </div>
              {% endif %}

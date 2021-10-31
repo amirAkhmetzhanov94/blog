@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block add_issue_method %}{% url 'webapp:project_add_issue' project.pk %}{% endblock %}
 {% load static %}
 
 {% block title %}Details{% endblock %}
