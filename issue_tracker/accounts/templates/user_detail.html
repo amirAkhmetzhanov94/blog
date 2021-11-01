@@ -7,13 +7,22 @@
     {% else %}
         <img class="avatar" src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg" width="250">
     {% endif %}
-    <p>Username: {{ user_obj.username }}</p>
-    <p>First name: {{ user_obj.first_name }}</p>
-    <p>Last name: {{ user_obj.last_name }}</p>
-    <p>Email: {{ user_obj.email }}</p>
-    <p>Github page: <a href="{{ user_obj.profile.github_link }}">{{ user_obj.profile.github_link }}</a></p>
+    <p class="mt-4"><b>Username:</b> {{ user_obj.username }}</p>
+    {% if user_obj.first_name %}
+    <p><b>First name:</b> {{ user_obj.first_name }}</p>
+    {% endif %}
+    {% if user_obj.last_name %}
+    <p><b>Last name:</b> {{ user_obj.last_name }}</p>
+    {% endif %}
+    <p><b>Email:</b> {{ user_obj.email }}</p>
+    {% if user_obj.profile.github_link %}
+    <p><b>Github page:</b> <a href="{{ user_obj.profile.github_link }}">{{ user_obj.profile.github_link }}</a></p>
+    {% endif %}
+    {% if user_obj.profile.aboout %}
     <h2>About me:</h2>
     <p>{{ user_obj.profile.about }}</p>
-    <h3>My projects: </h3>
+    {% endif %}
+    <h3 class="text-center m-4">My projects: </h3>
     {% include "partial/project_list.html" %}
+    {% include "partial/pagination.html" %}
 {% endblock %}

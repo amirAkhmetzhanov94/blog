@@ -43,3 +43,7 @@ button.remove_user{
 img.avatar{
     margin-bottom: 20px;
 }
+
+div.pagination{
+    max-width: 1095px;
+}

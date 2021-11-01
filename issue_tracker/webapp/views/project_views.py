@@ -9,6 +9,7 @@ from django.contrib.auth.mixins import UserPassesTestMixin, PermissionRequiredMi
 class ProjectListView(ListView):
     model = Project
     template_name = 'projects/index.html'
+    paginate_by = 5
 
 
 class ProjectDetailedView(DetailView):

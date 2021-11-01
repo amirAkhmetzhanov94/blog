@@ -1,5 +1,4 @@
 <div class="pagination">
-{% if is_paginated %}
   <ul class="pagination">
     {% if page_obj.has_previous %}
       <li class="page-item"><a href="?{% if query %}{{ query }}&{% endif %}page={{ page_obj.previous_page_number }}" class="page-link">Previous</a></li>
@@ -15,5 +14,4 @@
       <li class="page-item"><a href="?{% if query %}{{ query }}&{% endif %}page={{ page_obj.next_page_number }}" class="page-link">Next</a></li>
     {% endif %}
   </ul>
-{% endif %}
 </div>
