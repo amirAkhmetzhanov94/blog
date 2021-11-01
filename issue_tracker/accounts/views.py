@@ -1,12 +1,11 @@
 from django.contrib.auth import login, authenticate, logout, get_user_model
 from django.contrib.auth.models import User
-from django.core.paginator import Paginator
 from django.shortcuts import redirect, render, reverse, get_object_or_404
-from django.views.generic import View, CreateView, DetailView
+from django.views.generic import View, CreateView, DetailView, ListView
 from django.http import HttpResponseRedirect
 from accounts.forms import RegistrationForm
 from webapp.models import Project
-from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin, PermissionRequiredMixin
 from django.views.generic.list import MultipleObjectMixin
 
 
@@ -118,3 +117,11 @@ class UserDetailView(LoginRequiredMixin, DetailView, MultipleObjectMixin):
         object_list = Project.objects.filter(users__username__icontains=self.object.username)
         context = super(UserDetailView, self).get_context_data(object_list=object_list, **kwargs)
         return context
+
+
+class UserListView(PermissionRequiredMixin, ListView):
+    model = get_user_model()
+    template_name = "users_list.html"
+    context_object_name = "users_list"
+    paginate_by = 10
+    permission_required = "accounts.view_profile"

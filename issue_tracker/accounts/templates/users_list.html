@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <table class="table">
+  <thead class="bg-primary text-white">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for user in users_list %}
+    <tr>
+      <th scope="row">{{ user.pk }}</th>
+      <td><a href="{% url "accounts:profile" user.pk %}">{{ user.username }}</a></td>
+      <td>{{ user.email }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+    {% include "partial/pagination.html" %}
+{% endblock %}

@@ -16,12 +16,17 @@
     <div class="container">
       <a class="navbar-brand" href="{% url 'webapp:index' %}">Issue Tracker</a>
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'webapp:index' %}">Issues list<span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'webapp:index' %}">Issues list</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'webapp:project_list' %}">Projects list</a>
           </li>
+        {% if perms.accounts.view_profile %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'accounts:list' %}">Users list</a>
+          </li>
+        {% endif %}
          {% if perms.webapp.add_project or perms.webapp.add_issue and request.user in project.users.all %}
              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,7 +48,7 @@
                     {% if user.is_authenticated %}
            {% block menu_links %}{% endblock %}
            <li class="nav-item">
-               <a class="nav-link" href="{% url 'accounts:profile' user.pk %}">[{{ user.username }}]</a>
+               <a class="nav-link active" href="{% url 'accounts:profile' user.pk %}">[{{ user.username }}]</a>
            </li>
            <li class="nav-item">
                <a class="nav-link" href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}">Logout</a>
