@@ -11,7 +11,7 @@
         <p><b>Deadline</b>: {{ project.finish_date }}</p>
         <form action="{% url 'webapp:project_remove_user' project.pk %}" method="get">
             <p><b>Participants</b>:
-            {% for user in project_users %}{{ user }}
+            {% for user in project_users %}<a href="{% url "accounts:profile" user.pk %}">{{ user }}</a>
                {% if perms.auth.delete_user and request.user in project.users.all %}
                 <button class="remove_user bi bi-person-x" name="user_id" value="{{ user.pk }}"></button>
                 {% endif %}

@@ -43,7 +43,10 @@
                     {% if user.is_authenticated %}
            {% block menu_links %}{% endblock %}
            <li class="nav-item">
-               <a class="nav-link" href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}">Logout [{{ user.username }}]</a>
+               <a class="nav-link" href="{% url 'accounts:profile' user.pk %}">[{{ user.username }}]</a>
+           </li>
+           <li class="nav-item">
+               <a class="nav-link" href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}">Logout</a>
            </li>
        {% else %}
            <li class="menu-right"><a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}" class="nav-link">Login</a></li>
