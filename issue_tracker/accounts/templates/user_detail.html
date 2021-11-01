@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{ user_obj.username }}'s profile{% endblock %}
+{% block content %}
+    <h1>{{ user_obj.username }}'s profile</h1>
+    {% if user_obj.profile.avatar %}
+        <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="250">
+    {% else %}
+        <img class="avatar" src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg" width="250">
+    {% endif %}
+    <p>Username: {{ user_obj.username }}</p>
+    <p>First name: {{ user_obj.first_name }}</p>
+    <p>Last name: {{ user_obj.last_name }}</p>
+    <p>Email: {{ user_obj.email }}</p>
+    <p>Github page: <a href="{{ user_obj.profile.github_link }}">{{ user_obj.profile.github_link }}</a></p>
+    <h2>About me:</h2>
+    <p>{{ user_obj.profile.about }}</p>
+    <h3>My projects: </h3>
+    {% include "partial/project_list.html" %}
+{% endblock %}

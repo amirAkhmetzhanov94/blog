@@ -1,11 +1,12 @@
-from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth import login, authenticate, logout, get_user_model
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 from django.shortcuts import redirect, render, reverse, get_object_or_404
-from django.views.generic import View, CreateView
+from django.views.generic import View, CreateView, DetailView
 from django.http import HttpResponseRedirect
 from accounts.forms import RegistrationForm
 from webapp.models import Project
-from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
 
 class LoginView(View):
@@ -51,7 +52,7 @@ class RegisterView(CreateView):
 
 
 class RemoveFromProjectView(UserPassesTestMixin, View):
-    template_name = 'registration/remove.html'
+    template_name = 'remove.html'
 
     def get_object(self):
         pk = self.kwargs.get("project_pk")
@@ -79,7 +80,7 @@ class RemoveFromProjectView(UserPassesTestMixin, View):
 
 
 class AddToProjectView(UserPassesTestMixin, View):
-    template_name = 'registration/add.html'
+    template_name = 'add.html'
 
     def get_object(self):
         pk = self.kwargs.get("project_pk")
@@ -87,7 +88,6 @@ class AddToProjectView(UserPassesTestMixin, View):
 
     def test_func(self):
         return self.request.user in self.get_object().users.all() and self.request.user.has_perm('auth.add_user')
-
 
     def get(self, request, *args, **kwargs):
         project_id = kwargs.get("project_pk")
@@ -105,3 +105,22 @@ class AddToProjectView(UserPassesTestMixin, View):
             return redirect("webapp:project_detail", pk=project.pk)
         except User.DoesNotExist as n:
             return render(request, self.template_name, {"project": project, "error": n})
+
+
+class UserDetailView(LoginRequiredMixin, DetailView):
+    model = get_user_model()
+    template_name = "user_detail.html"
+    context_object_name = "user_obj"
+    paginate_related_by = 5
+    paginate_related_orphans = 0
+
+    def get_context_data(self, **kwargs):
+        projects = Project.objects.filter(users__username__icontains=self.object.username)
+        paginator = Paginator(projects, self.paginate_related_by,
+                              orphans=self.paginate_related_orphans)
+        page_num = self.request.GET.get("page", 1)
+        page = paginator.get_page(page_num)
+        kwargs["page_obj"] = page
+        kwargs["project_list"] = page.object_list
+        kwargs["is_paginated"] = page.has_other_pages()
+        return super().get_context_data(**kwargs)

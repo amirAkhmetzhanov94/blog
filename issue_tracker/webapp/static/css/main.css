@@ -39,3 +39,7 @@ button.remove_user{
     color: orangered;
     padding: 0;
 }
+
+img.avatar{
+    margin-bottom: 20px;
+}

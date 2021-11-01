@@ -1,0 +1,20 @@
+{% for project in project_list %}
+    <div class="col mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><a href="{% url 'webapp:project_detail' project.pk %}">{{ project.project_name }}</a>
+                {% if perms.webapp.change_project %}
+                <a href="{% url 'webapp:project_update' project.pk %}" class="bi bi-pencil-square"></a>
+                {% endif %}
+                {% if perms.webapp.delete_project %}
+                <a href="{% url 'webapp:project_delete' project.pk %}" class="bi bi-file-earmark-minus"></a>
+                {% endif %}</h5>
+              <p class="card-text">{{ project.project_summary }}</p>
+              <p class="card-text"><small class="text-muted">Starting date: {{ project.start_date }}</small></p>
+              <p class="card-text"><small class="text-muted">Deadline: {{ project.finish_date }}</small></p>
+            </div>
+          </div>
+    </div>
+{% empty %}
+    <p>No projects found</p>
+{% endfor %}
