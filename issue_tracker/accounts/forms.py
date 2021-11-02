@@ -1,6 +1,9 @@
 from django import forms
+from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ValidationError
+
+from accounts.models import Profile
 
 
 class RegistrationForm(UserCreationForm):
@@ -17,3 +20,17 @@ class RegistrationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         fields = ["username", "first_name",
                   "last_name", "email", "password1", "password2"]
+
+
+class UserChangeForm(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = ["first_name", "last_name", "email"]
+        labels = {"first_name": "Name", "last_name": "Surname", "email": "Email"}
+
+
+class ProfileChangeForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        exclude = ["user"]
+
