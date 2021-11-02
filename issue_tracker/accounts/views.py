@@ -1,9 +1,9 @@
-from django.contrib.auth import login, authenticate, logout, get_user_model
+from django.contrib.auth import login, authenticate, logout, get_user_model, update_session_auth_hash
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render, reverse, get_object_or_404
 from django.views.generic import View, CreateView, DetailView, ListView, UpdateView
 from django.http import HttpResponseRedirect
-from accounts.forms import RegistrationForm, UserChangeForm, ProfileChangeForm
+from accounts.forms import RegistrationForm, UserChangeForm, ProfileChangeForm, PasswordChangeForm
 from accounts.models import Profile
 from webapp.models import Project
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin, PermissionRequiredMixin
@@ -175,3 +175,19 @@ class UserChangeView(UserPassesTestMixin, UpdateView):
 
     def get_success_url(self):
         return reverse("accounts:profile", kwargs={"pk": self.object.pk})
+
+
+class ChangePasswordView(UserPassesTestMixin, UpdateView):
+    model = get_user_model()
+    form_class = PasswordChangeForm
+    template_name = "change_password.html"
+    context_object_name = "user_obj"
+
+    def form_valid(self, form):
+        form.save()
+        update_session_auth_hash(self.request, form.instance)
+        return redirect("accounts:profile", pk=self.get_object().pk)
+
+    def test_func(self):
+        return self.request.user == self.get_object() or \
+               self.request.user.is_superuser or self.request.user.groups.filter(name="admins")
