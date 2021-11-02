@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render, reverse, get_object_or_404
 from django.views.generic import View, CreateView, DetailView, ListView
 from django.http import HttpResponseRedirect
 from accounts.forms import RegistrationForm
+from accounts.models import Profile
 from webapp.models import Project
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin, PermissionRequiredMixin
 from django.views.generic.list import MultipleObjectMixin
@@ -39,6 +40,7 @@ class RegisterView(CreateView):
 
     def form_valid(self, form):
         user = form.save()
+        Profile.objects.create(user=user)
         login(self.request, user)
         return redirect(self.get_success_url())
 
