@@ -24,9 +24,9 @@
             <a class="btn btn-primary" href="{% url "accounts:edit_profile" user_obj.pk %}">
                 Edit account <i class="bi bi-pencil-square"></i>
             </a>
-{#            <a href="{% url "accounts:change_password" user_obj.pk %}">#}
-{#                Change password#}
-{#            </a>#}
+            <a class="btn btn-primary" href="{% url "accounts:change_password" user_obj.pk %}">
+                Change password <i class="bi bi-pencil-square"></i>
+            </a>
         </p>
     {% endifequal %}
     {% if user_obj.profile.aboout %}
