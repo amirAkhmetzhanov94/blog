@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Edit issue
+    {% trans "Edit issue" %}
 {% endblock %}
 
 {% block content %}
-    <h1>Edit issue</h1>
+    <h1>{% trans "Edit issue" %}</h1>
         <form action="{% url 'webapp:issue_update' issue.pk%}" method="post">
             {% include 'partial/issue_form.html' %}
-          <button class="btn btn-primary mt-3">Edit</button>
+          <button class="btn btn-primary mt-3">{% trans "Edit" %}</button>
         </form>
 {% endblock %}

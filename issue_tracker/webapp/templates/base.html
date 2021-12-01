@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,32 +15,32 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="background-color: #4a4a4a">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'webapp:index' %}">Issue Tracker</a>
+      <a class="navbar-brand" href="{% url 'webapp:index' %}">{% trans "Issue Tracker" %}</a>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'webapp:index' %}">Issues list</a>
+            <a class="nav-link" href="{% url 'webapp:index' %}">{% trans "Issues list" %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'webapp:project_list' %}">Projects list</a>
+            <a class="nav-link" href="{% url 'webapp:project_list' %}">{% trans "Projects list" %}</a>
           </li>
         {% if perms.accounts.view_profile %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'accounts:list' %}">Users list</a>
+            <a class="nav-link" href="{% url 'accounts:list' %}">{% trans "Users list" %}</a>
           </li>
         {% endif %}
          {% if perms.webapp.add_project or perms.webapp.add_issue and request.user in project.users.all %}
              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Menu
+                  {% trans "Menu" %}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% if perms.webapp.add_project %}
-                  <a class="dropdown-item" href="{% url 'webapp:project_add' %}">Create a new project</a>
+                  <a class="dropdown-item" href="{% url 'webapp:project_add' %}">{% trans "Create a new project" %}</a>
                 {% endif %}
                  {% if perms.webapp.add_issue and request.user in project.users.all %}
                   <a class="dropdown-item" href="
                     {% block add_issue_method %}{% url 'webapp:issue_add' %}{% endblock %}">
-                      Create a new issue
+                      {% trans "Create a new issue" %}
                   </a>
                     {% endif %}
                 </div>
@@ -51,11 +52,11 @@
                <a class="nav-link active" href="{% url 'accounts:profile' user.pk %}">[{{ user.username }}]</a>
            </li>
            <li class="nav-item">
-               <a class="nav-link" href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}">Logout</a>
+               <a class="nav-link" href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}">{% trans "Logout" %}</a>
            </li>
        {% else %}
-           <li class="menu-right"><a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}" class="nav-link">Login</a></li>
-           <li class="menu-right"><a href="{% url 'accounts:register' %}?next={{ request.get_full_path }}" class="nav-link">Register</a></li>
+           <li class="menu-right"><a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}" class="nav-link">{% trans "Login" %}</a></li>
+           <li class="menu-right"><a href="{% url 'accounts:register' %}?next={{ request.get_full_path }}" class="nav-link">{% trans "Register" %}</a></li>
        {% endif %}
         {% include "partial/search_form.html" %}
         </ul>

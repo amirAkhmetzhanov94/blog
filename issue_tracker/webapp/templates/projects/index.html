@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}Main page{% endblock %}
+{% block title %}{% trans "Main page" %}{% endblock %}
 
 {% block content %}
-    <h1 class="main_page">Projects</h1>
+    <h1 class="main_page">{% trans "Projects" %}</h1>
     {% include "partial/project_list.html" %}
     {% if is_paginated %}
         {% include "partial/pagination.html" %}

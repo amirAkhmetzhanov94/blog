@@ -1,39 +1,39 @@
 {% extends "base.html" %}
-{% block title %}{{ user_obj.username }}'s profile{% endblock %}
+{% block title %}{{ user_obj.username }}{% trans "'s profile" %}{% endblock %}
 {% block content %}
-    <h1>{{ user_obj.username }}'s profile</h1>
+    <h1>{{ user_obj.username }}{% trans "'s profile" %}</h1>
     {% if user_obj.profile.avatar %}
         <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="250">
     {% else %}
         <img class="avatar" src="https://pa1.narvii.com/6406/44636fa8fa6911b454828100d653c1e2a428a422_hq.gif" width="250">
     {% endif %}
 
-    <p class="mt-4"><b>Username:</b> {{ user_obj.username }}</p>
+    <p class="mt-4"><b>{% trans "Username:" %}</b> {{ user_obj.username }}</p>
     {% if user_obj.first_name %}
-    <p><b>First name:</b> {{ user_obj.first_name }}</p>
+    <p><b>{% trans "First name:" %}</b> {{ user_obj.first_name }}</p>
     {% endif %}
     {% if user_obj.last_name %}
-    <p><b>Last name:</b> {{ user_obj.last_name }}</p>
+    <p><b>{% trans "Last name:" %}</b> {{ user_obj.last_name }}</p>
     {% endif %}
-    <p><b>Email:</b> {{ user_obj.email }}</p>
+    <p><b>{% trans "Email:" %}</b> {{ user_obj.email }}</p>
     {% if user_obj.profile.github_link %}
-    <p><b>Github page:</b> <a href="{{ user_obj.profile.github_link }}">{{ user_obj.profile.github_link }}</a></p>
+    <p><b>{% trans "Github page:" %}</b> <a href="{{ user_obj.profile.github_link }}">{{ user_obj.profile.github_link }}</a></p>
     {% endif %}
     {% ifequal user user_obj %}
         <p>
             <a class="btn btn-primary" href="{% url "accounts:edit_profile" user_obj.pk %}">
-                Edit account <i class="bi bi-pencil-square"></i>
+                {% trans "Edit account" %} <i class="bi bi-pencil-square"></i>
             </a>
             <a class="btn btn-primary" href="{% url "accounts:change_password" user_obj.pk %}">
-                Change password <i class="bi bi-pencil-square"></i>
+                {% trans "Change password" %} <i class="bi bi-pencil-square"></i>
             </a>
         </p>
     {% endifequal %}
     {% if user_obj.profile.aboout %}
-    <h2>About me:</h2>
+    <h2>{% trans "About me" %}:</h2>
     <p>{{ user_obj.profile.about }}</p>
     {% endif %}
-    <h3 class="text-center m-4">My projects: </h3>
+    <h3 class="text-center m-4">{% trans "My projects" %}: </h3>
     {% include "partial/project_list.html" %}
     {% include "partial/pagination.html" %}
 {% endblock %}

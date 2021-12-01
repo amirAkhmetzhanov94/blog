@@ -6,8 +6,8 @@
     <div class="product-detail">
         <h1>{{ issue.summary }}</h1><span class="badge badge-primary">{{ issue.status }}</span> <p class="price
         badge badge-info">{{ issue.type.get }}</p>
-        <p><b>Description</b>: {{ issue.description }}</p>
-        <p><b>Created at</b>: {{ issue.creation_time }}</p>
-        <p><b>Updated at</b>: {{ issue.update_time }}</p>
+        <p><b>{% trans "Description" %}</b>: {{ issue.description }}</p>
+        <p><b>{% trans "Created at" %}</b>: {{ issue.creation_time }}</p>
+        <p><b>{% trans "Updated at" %}</b>: {{ issue.update_time }}</p>
     </div>
 {% endblock %}

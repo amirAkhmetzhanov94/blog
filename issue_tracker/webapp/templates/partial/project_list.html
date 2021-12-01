@@ -10,11 +10,11 @@
                 <a href="{% url 'webapp:project_delete' project.pk %}" class="bi bi-file-earmark-minus"></a>
                 {% endif %}</h5>
               <p class="card-text">{{ project.project_summary }}</p>
-              <p class="card-text"><small class="text-muted">Starting date: {{ project.start_date }}</small></p>
-              <p class="card-text"><small class="text-muted">Deadline: {{ project.finish_date }}</small></p>
+              <p class="card-text"><small class="text-muted">{% trans "Starting date:" %} {{ project.start_date }}</small></p>
+              <p class="card-text"><small class="text-muted">{% trans "Deadline:" %} {{ project.finish_date }}</small></p>
             </div>
           </div>
     </div>
 {% empty %}
-    <p>No projects found</p>
+    <p>{% trans "No projects found" %}</p>
 {% endfor %}

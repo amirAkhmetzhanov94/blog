@@ -1,0 +1,344 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-01 16:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: accounts/models.py:11
+msgid "ProfileUser"
+msgstr "Пользователь"
+
+#: accounts/models.py:14
+msgid "ProfileAvatar"
+msgstr "Аватар"
+
+#: accounts/models.py:16
+msgid "ProfileGithub"
+msgstr "Гитхаб"
+
+#: accounts/models.py:18
+msgid "ProfileAbout"
+msgstr "О пользователе"
+
+#: accounts/models.py:21
+msgid "ProfileVerboseName"
+msgstr "Профиль"
+
+#: accounts/models.py:22
+msgid "ProfilePluralName"
+msgstr "Профили"
+
+#: accounts/templates/add.html:3
+msgid "Add user"
+msgstr "Добавить пользователя"
+
+#: accounts/templates/add.html:7
+msgid "Add user to the"
+msgstr "Добавить пользователя к"
+
+#: accounts/templates/add.html:7
+msgid "project"
+msgstr "Проект"
+
+#: accounts/templates/add.html:11
+msgid "Input username:"
+msgstr "Введите логин пользователя"
+
+#: accounts/templates/add.html:14
+msgid "Submit"
+msgstr "Отправить"
+
+#: accounts/templates/change_password.html:4
+#: accounts/templates/user_detail.html:28
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: accounts/templates/change_password.html:7
+msgid "Change password for"
+msgstr "Изменить пароль для"
+
+#: accounts/templates/change_password.html:11
+msgid "Change"
+msgstr "Изменить"
+
+#: accounts/templates/edit_profile.html:3
+#: accounts/templates/edit_profile.html:6
+msgid "Edit profile"
+msgstr "Редактировать профиль"
+
+#: accounts/templates/edit_profile.html:14
+#: webapp/templates/issues/update.html:11
+#: webapp/templates/projects/update.html:11
+msgid "Edit"
+msgstr "Редактировать"
+
+#: accounts/templates/registration/login.html:3
+#: accounts/templates/registration/login.html:6 webapp/templates/base.html:58
+msgid "Login"
+msgstr "Залогиниться"
+
+#: accounts/templates/registration/login.html:10
+msgid "The username or password you entered is incorrect."
+msgstr "Неправильный логин пользователя или пароль"
+
+#: accounts/templates/registration/login.html:13
+#: accounts/templates/users_list.html:7
+msgid "Username"
+msgstr "Логин"
+
+#: accounts/templates/registration/login.html:17
+msgid "Password"
+msgstr "Пароль"
+
+#: accounts/templates/registration/login.html:21
+msgid "Enter"
+msgstr "Ввести"
+
+#: accounts/templates/registration/register.html:5
+#: accounts/templates/registration/register.html:8
+#: accounts/templates/registration/register.html:13
+#: webapp/templates/base.html:59
+msgid "Register"
+msgstr "Зарегистрировать"
+
+#: accounts/templates/remove.html:3
+msgid "Remove user"
+msgstr "Убрать пользователя"
+
+#: accounts/templates/remove.html:8
+msgid "Are you sure want to delete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: accounts/templates/remove.html:8
+msgid "from the project"
+msgstr "из проекта"
+
+#: accounts/templates/remove.html:13 webapp/templates/issues/delete.html:13
+#: webapp/templates/projects/delete.html:13
+msgid "Yes"
+msgstr "Да"
+
+#: accounts/templates/remove.html:15 webapp/templates/issues/delete.html:14
+#: webapp/templates/projects/delete.html:14
+msgid "No"
+msgstr "Нет"
+
+#: accounts/templates/user_detail.html:2 accounts/templates/user_detail.html:4
+msgid "'s profile"
+msgstr "профиль"
+
+#: accounts/templates/user_detail.html:11
+msgid "Username:"
+msgstr "Логин"
+
+#: accounts/templates/user_detail.html:13
+msgid "First name:"
+msgstr "Имя"
+
+#: accounts/templates/user_detail.html:16
+msgid "Last name:"
+msgstr "Фамилия"
+
+#: accounts/templates/user_detail.html:18
+msgid "Email:"
+msgstr "Электронная почта"
+
+#: accounts/templates/user_detail.html:20
+msgid "Github page:"
+msgstr "Гитхаб"
+
+#: accounts/templates/user_detail.html:25
+msgid "Edit account"
+msgstr "Редактировать аккаунт"
+
+#: accounts/templates/user_detail.html:33
+msgid "About me"
+msgstr "Обо мне"
+
+#: accounts/templates/user_detail.html:36
+msgid "My projects"
+msgstr "Мои проекты"
+
+#: accounts/templates/users_list.html:6
+msgid "id"
+msgstr "Номер идентификации"
+
+#: accounts/templates/users_list.html:8
+msgid "Email"
+msgstr "Электронная почта"
+
+#: issue_tracker/settings.py:113
+msgid "English"
+msgstr "Английский"
+
+#: issue_tracker/settings.py:114
+msgid "Russian"
+msgstr "Русский"
+
+#: webapp/templates/base.html:18
+msgid "Issue Tracker"
+msgstr "Трекер задач"
+
+#: webapp/templates/base.html:21
+msgid "Issues list"
+msgstr "Список задач"
+
+#: webapp/templates/base.html:24
+msgid "Projects list"
+msgstr "Список проектов"
+
+#: webapp/templates/base.html:28
+msgid "Users list"
+msgstr "Список пользователей"
+
+#: webapp/templates/base.html:34
+msgid "Menu"
+msgstr "Меню"
+
+#: webapp/templates/base.html:38
+msgid "Create a new project"
+msgstr "Создать новый проект"
+
+#: webapp/templates/base.html:43
+msgid "Create a new issue"
+msgstr "Создать новую задачу"
+
+#: webapp/templates/base.html:55
+msgid "Logout"
+msgstr "Выйти"
+
+#: webapp/templates/issues/create.html:4 webapp/templates/issues/create.html:8
+msgid "Create new issue"
+msgstr "Создать новую задачу"
+
+#: webapp/templates/issues/create.html:11
+#: webapp/templates/projects/create.html:11
+msgid "Create"
+msgstr "Создать"
+
+#: webapp/templates/issues/delete.html:3
+msgid "Delete Issue"
+msgstr "Удалить задачу"
+
+#: webapp/templates/issues/delete.html:8
+msgid "Are you sure want to delete issue"
+msgstr "Вы уверены, что хотите удалить задачу"
+
+#: webapp/templates/issues/detail.html:9
+#: webapp/templates/projects/detail.html:9
+msgid "Description"
+msgstr "Описание"
+
+#: webapp/templates/issues/detail.html:10
+msgid "Created at"
+msgstr "Создано в"
+
+#: webapp/templates/issues/detail.html:11
+msgid "Updated at"
+msgstr "Обновлено в"
+
+#: webapp/templates/issues/index.html:3 webapp/templates/projects/index.html:3
+msgid "Main page"
+msgstr "Главная страница"
+
+#: webapp/templates/issues/index.html:6
+msgid "Issues"
+msgstr "Задачи"
+
+#: webapp/templates/issues/index.html:20
+#: webapp/templates/projects/detail.html:41
+msgid "Last updated"
+msgstr "В последний раз было обновлено"
+
+#: webapp/templates/issues/index.html:25
+#: webapp/templates/projects/detail.html:46
+msgid "No tasks found"
+msgstr "Задачи не найдены"
+
+#: webapp/templates/issues/update.html:4 webapp/templates/issues/update.html:8
+msgid "Edit issue"
+msgstr "Отредактировать задачу"
+
+#: webapp/templates/partial/pagination.html:4
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: webapp/templates/partial/pagination.html:14
+msgid "Next"
+msgstr "Следующая"
+
+#: webapp/templates/partial/project_list.html:13
+msgid "Starting date:"
+msgstr "Дата начала"
+
+#: webapp/templates/partial/project_list.html:14
+msgid "Deadline:"
+msgstr "Дата окончания"
+
+#: webapp/templates/partial/project_list.html:19
+msgid "No projects found"
+msgstr "Проекты не были найдены"
+
+#: webapp/templates/partial/search_form.html:2
+#: webapp/templates/partial/search_form.html:3
+msgid "Search"
+msgstr "Поиск"
+
+#: webapp/templates/projects/create.html:4
+#: webapp/templates/projects/create.html:8
+msgid "Create new project"
+msgstr "Создать новый проект"
+
+#: webapp/templates/projects/delete.html:3
+msgid "Delete project"
+msgstr "Удалить проект"
+
+#: webapp/templates/projects/delete.html:8
+msgid "Are you sure want to delete project"
+msgstr "Вы уверены, что хотите удалить проект"
+
+#: webapp/templates/projects/detail.html:5
+msgid "Details"
+msgstr "Детали"
+
+#: webapp/templates/projects/detail.html:10
+msgid "Started at"
+msgstr "Начат в"
+
+#: webapp/templates/projects/detail.html:11
+msgid "Deadline"
+msgstr "Дедлайн"
+
+#: webapp/templates/projects/detail.html:13
+msgid "Participants"
+msgstr "Участники"
+
+#: webapp/templates/projects/detail.html:19
+msgid "No participants found."
+msgstr "Участники не были найдены"
+
+#: webapp/templates/projects/detail.html:22
+msgid "Add a new user "
+msgstr "Добавить нового пользователя"
+
+#: webapp/templates/projects/index.html:6
+msgid "Projects"
+msgstr "Проекты"
+
+#: webapp/templates/projects/update.html:4
+#: webapp/templates/projects/update.html:8
+msgid "Edit project"
+msgstr "Редактировать проект"

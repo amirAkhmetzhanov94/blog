@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% block title %}
-    Remove user
+    {% trans "Remove user" %}
 {% endblock %}
 
 {% block content %}
         <div class="container">
-            <h1 class="text-center">Are you sure want to delete {{ user }} from the project "{{ project }}"?</h1>
+            <h1 class="text-center">{% trans "Are you sure want to delete" %} {{ user }} {% trans "from the project" %} "{{ project }}"?</h1>
             <form action="{% url 'webapp:project_remove_user' project.pk %}" method="post">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col text-center">
-                        <button class="btn btn-primary btn-block mt-3" name="choice" value="Yes">Yes</button>
+                        <button class="btn btn-primary btn-block mt-3" name="choice" value="Yes">{% trans "Yes" %}</button>
                         <input type="hidden" name="user_id" value="{{ user.pk }}">
-                        <button class="btn btn-secondary btn-block mt-3">No</button>
+                        <button class="btn btn-secondary btn-block mt-3">{% trans "No" %}</button>
                     </div>
                 </div>
             </form>

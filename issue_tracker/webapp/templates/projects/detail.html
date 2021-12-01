@@ -2,24 +2,24 @@
 {% block add_issue_method %}{% url 'webapp:project_add_issue' project.pk %}{% endblock %}
 {% load static %}
 
-{% block title %}Details{% endblock %}
+{% block title %}{% trans "Details" %}{% endblock %}
 {% block content %}
     <div class="product-detail">
         <h1>{{ project.project_name }}</h1><br>
-        <p><b>Description</b>: {{ project.project_summary }}</p>
-        <p><b>Started at</b>: {{ project.start_date }}</p>
-        <p><b>Deadline</b>: {{ project.finish_date }}</p>
+        <p><b>{% trans "Description" %}</b>: {{ project.project_summary }}</p>
+        <p><b>{% trans "Started at" %}</b>: {{ project.start_date }}</p>
+        <p><b>{% trans "Deadline" %}</b>: {{ project.finish_date }}</p>
         <form action="{% url 'webapp:project_remove_user' project.pk %}" method="get">
-            <p><b>Participants</b>:
+            <p><b>{% trans "Participants" %}</b>:
             {% for user in project_users %}<a href="{% url "accounts:profile" user.pk %}">{{ user }}</a>
                {% if perms.auth.delete_user and request.user in project.users.all %}
                 <button class="remove_user bi bi-person-x" name="user_id" value="{{ user.pk }}"></button>
                 {% endif %}
             {% if forloop.last %}.{% else %},
-            {% endif %}{% empty %}No participants found.{% endfor %}</form>
+            {% endif %}{% empty %}{% trans "No participants found." %}{% endfor %}</form>
                 <form action="{% url 'webapp:project_add_user' project.pk %}" method="get">
                     {% if perms.auth.add_user and request.user in project.users.all %}
-                    <button class="btn btn-primary btn-sm mb-3" >Add a new user <i class="bi bi-person-plus"></i></button>
+                    <button class="btn btn-primary btn-sm mb-3" >{% trans "Add a new user " %}<i class="bi bi-person-plus"></i></button>
                     {% endif %}
                 </form>
     </div>
@@ -38,12 +38,12 @@
                     {% endif %}
                 </h5>
                   <p class="card-text">{{ issue.description }}</p>
-                  <p class="card-text"><small class="text-muted">Last updated {{ issue.update_time }}</small></p>
+                  <p class="card-text"><small class="text-muted">{% trans "Last updated" %} {{ issue.update_time }}</small></p>
                 </div>
               </div>
         </div>
     {% empty %}
-        <h4 class="container text-center mt-5">No tasks found</h4>
+        <h4 class="container text-center mt-5">{% trans "No tasks found" %}</h4>
     {% endfor %}
     </div>
 {% endblock %}

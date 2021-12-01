@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block title %}
-    Add user
+    {% trans "Add user" %}
 {% endblock %}
 
 {% block content %}
-    <h1>Add user to the {{ project }} project:</h1>
+    <h1>{% trans "Add user to the" %} {{ project }} {% trans "project" %}:</h1>
     <form action="{% url 'webapp:project_add_user' project.pk %}" class="mt-5" method="post">
         {% csrf_token %}
         <label>
-            Input username:
+            {% trans "Input username:" %}
             <input class="form-control" type="text" name="user_id">
         </label>
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary">{% trans "Submit" %}</button>
     </form>
     <p class="error_msg">{{ error }}</p>
 {% endblock %}
