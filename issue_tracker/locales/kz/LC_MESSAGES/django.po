@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 09:39+0000\n"
+"POT-Creation-Date: 2021-12-02 12:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,33 +25,45 @@ msgstr "Электрондық поштасы"
 msgid "RegistraionFormUsername"
 msgstr "Пайдаланушы логин"
 
-#: accounts/forms.py:39
+#: accounts/forms.py:27
+msgid "UserChangeFormFirstName"
+msgstr "Аты"
+
+#: accounts/forms.py:28
+msgid "UserChangeFormLastName"
+msgstr "Тегі"
+
+#: accounts/forms.py:29
+msgid "UserChangeFormEmail"
+msgstr "Электрондық поштасы"
+
+#: accounts/forms.py:36 accounts/models.py:14
+msgid "ProfileAvatar"
+msgstr "Аватар"
+
+#: accounts/forms.py:37 accounts/models.py:16
+msgid "ProfileGithub"
+msgstr "Гитхаб"
+
+#: accounts/forms.py:38 accounts/models.py:18
+msgid "ProfileAbout"
+msgstr "Туралы"
+
+#: accounts/forms.py:46
 msgid "PasswordFormOldPass"
 msgstr "Ескі Құпия сөз"
 
-#: accounts/forms.py:41
+#: accounts/forms.py:48
 msgid "PasswordFormNewPassword"
 msgstr "Жаңа Құпия Сөз"
 
-#: accounts/forms.py:43
+#: accounts/forms.py:50
 msgid "PasswordFormConfirmationPass"
 msgstr "Құпия сөзді растау"
 
 #: accounts/models.py:11
 msgid "ProfileUser"
 msgstr "Пайдаланушы"
-
-#: accounts/models.py:14
-msgid "ProfileAvatar"
-msgstr "Аватар"
-
-#: accounts/models.py:16
-msgid "ProfileGithub"
-msgstr "Гитхаб"
-
-#: accounts/models.py:18
-msgid "ProfileAbout"
-msgstr "Туралы"
 
 #: accounts/models.py:21
 msgid "ProfileVerboseName"
@@ -115,7 +127,7 @@ msgid "The username or password you entered is incorrect."
 msgstr "Қолданушы аты немесе құпия сөз дұрыс емес."
 
 #: accounts/templates/registration/login.html:14
-#: accounts/templates/users_list.html:9
+#: accounts/templates/users_list.html:11
 msgid "Username"
 msgstr "Пайдаланушы логин"
 
@@ -192,11 +204,15 @@ msgstr "Мен туралы"
 msgid "My projects"
 msgstr "Менің жобаларым"
 
-#: accounts/templates/users_list.html:8
+#: accounts/templates/users_list.html:4
+msgid "UserList"
+msgstr "Пайдаланушылар"
+
+#: accounts/templates/users_list.html:10
 msgid "id"
 msgstr "Сәйкестендіру нөмірі"
 
-#: accounts/templates/users_list.html:10
+#: accounts/templates/users_list.html:12
 msgid "Email"
 msgstr "Электрондық пошта"
 
@@ -212,39 +228,35 @@ msgstr "Орыс"
 msgid "Kazakh"
 msgstr "қазақ"
 
-#: webapp/forms.py:10
+#: webapp/forms.py:11
 msgid "IssueFormSummary"
 msgstr "Түйіндеме"
 
-#: webapp/forms.py:11
+#: webapp/forms.py:12
 msgid "IssueFormDescription"
 msgstr "Сипаттама"
 
-#: webapp/forms.py:12
+#: webapp/forms.py:13
 msgid "IssueFormStatus"
 msgstr "Күй"
 
-#: webapp/forms.py:14
+#: webapp/forms.py:15
 msgid "IssueFormType"
 msgstr "Түр"
 
-#: webapp/forms.py:16
-msgid "IssueFormProject"
-msgstr "Жоба"
-
-#: webapp/forms.py:27
+#: webapp/forms.py:26
 msgid "ProjectFormStartDate"
 msgstr "Басталатын күн"
 
-#: webapp/forms.py:30
+#: webapp/forms.py:29
 msgid "ProjectFormFinishDate"
 msgstr "Аяқталу күні"
 
-#: webapp/forms.py:31
+#: webapp/forms.py:30
 msgid "ProjectFormProjectName"
 msgstr "Аты"
 
-#: webapp/forms.py:33
+#: webapp/forms.py:32
 msgid "ProjectFormProjectSummary"
 msgstr "Түйіндеме"
 
@@ -447,3 +459,6 @@ msgstr "Жобалар"
 #: webapp/templates/projects/update.html:9
 msgid "Edit project"
 msgstr "Жобаны өңдеу"
+
+#~ msgid "IssueFormProject"
+#~ msgstr "Жоба"

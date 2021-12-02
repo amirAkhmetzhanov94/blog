@@ -49,7 +49,6 @@ class AddIssue(PermissionRequiredMixin, CreateView):
     permission_required = "webapp.add_issue"
 
     def get_success_url(self):
-        print(self.object.project.pk)
         return reverse("webapp:index")
 
 class IssueView(TemplateView):

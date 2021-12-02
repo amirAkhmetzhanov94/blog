@@ -9,6 +9,9 @@ from accounts.models import Profile
 class RegistrationForm(UserCreationForm):
     email = forms.CharField(label=_("RegistrationFormEmail"), required=True)
     username = forms.CharField(label=_("RegistraionFormUsername"), required=True)
+    first_name = forms.CharField(label=_("RegistrationFormFirstName"))
+    last_name = forms.CharField(label=_("RegistrationFormLastName"))
+    password2 = forms.CharField(label=_("RegistrationFormConfirmationPassword"))
 
     def clean(self):
         cleaned_data = super().clean()
@@ -24,12 +27,20 @@ class RegistrationForm(UserCreationForm):
 
 
 class UserChangeForm(forms.ModelForm):
+    first_name = forms.CharField(label=_("UserChangeFormFirstName"))
+    last_name = forms.CharField(label=_("UserChangeFormLastName"))
+    email = forms.CharField(label=_("UserChangeFormEmail"), widget=forms.EmailInput)
+
     class Meta:
         model = get_user_model()
         fields = ["first_name", "last_name", "email"]
 
 
 class ProfileChangeForm(forms.ModelForm):
+    avatar = forms.ImageField(label=_("ProfileAvatar"))
+    github_link = forms.URLField(label=_("ProfileGithub"))
+    about = forms.CharField(label=_("ProfileAbout"), widget=forms.Textarea)
+
     class Meta:
         model = Profile
         exclude = ["user"]

@@ -2,7 +2,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from webapp.models import Project, Issue
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
-from webapp.forms import ProjectForm
+from webapp.forms import ProjectForm, IssueForm
 from django.contrib.auth.mixins import UserPassesTestMixin, PermissionRequiredMixin
 
 
@@ -66,7 +66,7 @@ class ProjectUpdateView(UserPassesTestMixin, UpdateView):
 class ProjectCreateIssue(UserPassesTestMixin, CreateView):
     model = Issue
     template_name = "issues/create.html"
-    fields = ["summary", "description", "status", "type"]
+    form_class = IssueForm
 
     def test_func(self):
         pk = self.kwargs.get("pk")

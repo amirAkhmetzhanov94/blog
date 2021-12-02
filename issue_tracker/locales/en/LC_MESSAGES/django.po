@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 08:39+0000\n"
+"POT-Creation-Date: 2021-12-02 12:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: accounts/forms.py:10
-#, fuzzy
-#| msgid "UserFormEmail"
 msgid "RegistrationFormEmail"
 msgstr "Email"
 
@@ -28,33 +26,45 @@ msgstr "Email"
 msgid "RegistraionFormUsername"
 msgstr "Login"
 
-#: accounts/forms.py:39
+#: accounts/forms.py:27
+msgid "UserChangeFormFirstName"
+msgstr "Username"
+
+#: accounts/forms.py:28
+msgid "UserChangeFormLastName"
+msgstr "Last Name"
+
+#: accounts/forms.py:29
+msgid "UserChangeFormEmail"
+msgstr "Email"
+
+#: accounts/forms.py:36 accounts/models.py:14
+msgid "ProfileAvatar"
+msgstr "Profile Avatar"
+
+#: accounts/forms.py:37 accounts/models.py:16
+msgid "ProfileGithub"
+msgstr "Github"
+
+#: accounts/forms.py:38 accounts/models.py:18
+msgid "ProfileAbout"
+msgstr "About"
+
+#: accounts/forms.py:46
 msgid "PasswordFormOldPass"
 msgstr "Old Password"
 
-#: accounts/forms.py:41
+#: accounts/forms.py:48
 msgid "PasswordFormNewPassword"
 msgstr "New Password"
 
-#: accounts/forms.py:43
+#: accounts/forms.py:50
 msgid "PasswordFormConfirmationPass"
 msgstr "Confirm Password"
 
 #: accounts/models.py:11
 msgid "ProfileUser"
 msgstr "User"
-
-#: accounts/models.py:14
-msgid "ProfileAvatar"
-msgstr "Avatar"
-
-#: accounts/models.py:16
-msgid "ProfileGithub"
-msgstr "Github"
-
-#: accounts/models.py:18
-msgid "ProfileAbout"
-msgstr "About"
 
 #: accounts/models.py:21
 msgid "ProfileVerboseName"
@@ -109,7 +119,7 @@ msgid "Edit"
 msgstr "Edit"
 
 #: accounts/templates/registration/login.html:4
-#: accounts/templates/registration/login.html:7 webapp/templates/base.html:59
+#: accounts/templates/registration/login.html:7 webapp/templates/base.html:75
 msgid "Login"
 msgstr "Login"
 
@@ -118,7 +128,7 @@ msgid "The username or password you entered is incorrect."
 msgstr "The username or password you entered is incorrect."
 
 #: accounts/templates/registration/login.html:14
-#: accounts/templates/users_list.html:9
+#: accounts/templates/users_list.html:11
 msgid "Username"
 msgstr "Username"
 
@@ -133,7 +143,7 @@ msgstr "Enter"
 #: accounts/templates/registration/register.html:6
 #: accounts/templates/registration/register.html:9
 #: accounts/templates/registration/register.html:14
-#: webapp/templates/base.html:60
+#: webapp/templates/base.html:76
 msgid "Register"
 msgstr "Register"
 
@@ -195,57 +205,59 @@ msgstr "About me"
 msgid "My projects"
 msgstr "My projects"
 
-#: accounts/templates/users_list.html:8
+#: accounts/templates/users_list.html:4
+msgid "UserList"
+msgstr "Users list"
+
+#: accounts/templates/users_list.html:10
 msgid "id"
 msgstr "id"
 
-#: accounts/templates/users_list.html:10
+#: accounts/templates/users_list.html:12
 msgid "Email"
 msgstr "Email"
 
-#: issue_tracker/settings.py:113
+#: issue_tracker/settings.py:130
 msgid "English"
 msgstr "English"
 
-#: issue_tracker/settings.py:114
+#: issue_tracker/settings.py:131
 msgid "Russian"
 msgstr "Russian"
 
-#: webapp/forms.py:10
+#: issue_tracker/settings.py:132
+msgid "Kazakh"
+msgstr "Kazakh"
+
+#: webapp/forms.py:11
 msgid "IssueFormSummary"
 msgstr "Summary"
 
-#: webapp/forms.py:11
-#, fuzzy
-#| msgid "Description"
+#: webapp/forms.py:12
 msgid "IssueFormDescription"
 msgstr "Description"
 
-#: webapp/forms.py:12
+#: webapp/forms.py:13
 msgid "IssueFormStatus"
 msgstr "Status"
 
-#: webapp/forms.py:14
+#: webapp/forms.py:15
 msgid "IssueFormType"
 msgstr "Type"
 
-#: webapp/forms.py:16
-msgid "IssueFormProject"
-msgstr "Project"
-
-#: webapp/forms.py:27
+#: webapp/forms.py:26
 msgid "ProjectFormStartDate"
 msgstr "Start Date"
 
-#: webapp/forms.py:30
+#: webapp/forms.py:29
 msgid "ProjectFormFinishDate"
 msgstr "Finish Date"
 
-#: webapp/forms.py:31
+#: webapp/forms.py:30
 msgid "ProjectFormProjectName"
 msgstr "Name"
 
-#: webapp/forms.py:33
+#: webapp/forms.py:32
 msgid "ProjectFormProjectSummary"
 msgstr "Summary"
 
@@ -337,7 +349,7 @@ msgstr "Create a new project"
 msgid "Create a new issue"
 msgstr "Create a new issue"
 
-#: webapp/templates/base.html:56
+#: webapp/templates/base.html:72
 msgid "Logout"
 msgstr "Logout"
 
@@ -461,10 +473,8 @@ msgstr "Projects"
 msgid "Edit project"
 msgstr "Edit project"
 
-#, fuzzy
-#~| msgid "Username"
-#~ msgid "UserFormChangeName"
-#~ msgstr "Username"
+#~ msgid "IssueFormProject"
+#~ msgstr "Project"
 
 #~ msgid "UserFormChangeSurname"
 #~ msgstr "Surname"
