@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block add_issue_method %}{% url 'webapp:project_add_issue' project.pk %}{% endblock %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}{% trans "Details" %}{% endblock %}
 {% block content %}
@@ -38,7 +39,7 @@
                     {% endif %}
                 </h5>
                   <p class="card-text">{{ issue.description }}</p>
-                  <p class="card-text"><small class="text-muted">{% trans "Last updated" %} {{ issue.update_time }}</small></p>
+                  <p class="card-text"><small class="text-muted">{% trans "Last updated" %}: {{ issue.update_time }}</small></p>
                 </div>
               </div>
         </div>

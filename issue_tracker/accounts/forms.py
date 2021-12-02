@@ -2,12 +2,13 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ValidationError
-
+from django.utils.translation import gettext_lazy as _
 from accounts.models import Profile
 
 
 class RegistrationForm(UserCreationForm):
-    email = forms.CharField(label="Email", required=True)
+    email = forms.CharField(label=_("RegistrationFormEmail"), required=True)
+    username = forms.CharField(label=_("RegistraionFormUsername"), required=True)
 
     def clean(self):
         cleaned_data = super().clean()
@@ -26,7 +27,6 @@ class UserChangeForm(forms.ModelForm):
     class Meta:
         model = get_user_model()
         fields = ["first_name", "last_name", "email"]
-        labels = {"first_name": "Name", "last_name": "Surname", "email": "Email"}
 
 
 class ProfileChangeForm(forms.ModelForm):
@@ -36,11 +36,11 @@ class ProfileChangeForm(forms.ModelForm):
 
 
 class PasswordChangeForm(forms.ModelForm):
-    old_password = forms.CharField(label="Old password", strip=False,
+    old_password = forms.CharField(label=_("PasswordFormOldPass"), strip=False,
                                    widget=forms.PasswordInput)
-    password = forms.CharField(label="Password", strip=False,
+    password = forms.CharField(label=_("PasswordFormNewPassword"), strip=False,
                                widget=forms.PasswordInput)
-    password_confirm = forms.CharField(label="Confirm password", strip=False,
+    password_confirm = forms.CharField(label=_("PasswordFormConfirmationPass"), strip=False,
                                        widget=forms.PasswordInput)
 
     def clean_password_confirm(self):

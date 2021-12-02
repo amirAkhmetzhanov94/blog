@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-01 16:41+0000\n"
+"POT-Creation-Date: 2021-12-02 08:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,328 +19,454 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: accounts/forms.py:10
+#, fuzzy
+#| msgid "UserFormEmail"
+msgid "RegistrationFormEmail"
+msgstr "Электронная почта"
+
+#: accounts/forms.py:11
+msgid "RegistraionFormUsername"
+msgstr "Логин"
+
+#: accounts/forms.py:39
+msgid "PasswordFormOldPass"
+msgstr "Старый пароль"
+
+#: accounts/forms.py:41
+msgid "PasswordFormNewPassword"
+msgstr "Новый пароль"
+
+#: accounts/forms.py:43
+msgid "PasswordFormConfirmationPass"
+msgstr "Подтверждение пароля"
+
 #: accounts/models.py:11
 msgid "ProfileUser"
-msgstr "User"
+msgstr "Пользователь"
 
 #: accounts/models.py:14
 msgid "ProfileAvatar"
-msgstr "Avatar"
+msgstr "Аватар"
 
 #: accounts/models.py:16
 msgid "ProfileGithub"
-msgstr "Github"
+msgstr "Гитхаб"
 
 #: accounts/models.py:18
 msgid "ProfileAbout"
-msgstr "About"
+msgstr "О пользователе"
 
 #: accounts/models.py:21
 msgid "ProfileVerboseName"
-msgstr "Profile"
+msgstr "Профиль"
 
 #: accounts/models.py:22
 msgid "ProfilePluralName"
-msgstr "Profiles"
+msgstr "Профили"
 
-#: accounts/templates/add.html:3
+#: accounts/templates/add.html:5
 msgid "Add user"
-msgstr "Add user"
+msgstr "Добавить пользователя"
 
-#: accounts/templates/add.html:7
+#: accounts/templates/add.html:9
 msgid "Add user to the"
-msgstr "Add user to the"
+msgstr "Добавить пользователя в"
 
-#: accounts/templates/add.html:7
+#: accounts/templates/add.html:9
 msgid "project"
-msgstr "project"
+msgstr "проект"
 
-#: accounts/templates/add.html:11
+#: accounts/templates/add.html:13
 msgid "Input username:"
-msgstr "Input username:"
+msgstr "Введите логин"
 
-#: accounts/templates/add.html:14
+#: accounts/templates/add.html:16
 msgid "Submit"
-msgstr "Submit"
+msgstr "Отправить"
 
-#: accounts/templates/change_password.html:4
-#: accounts/templates/user_detail.html:28
+#: accounts/templates/change_password.html:5
+#: accounts/templates/user_detail.html:30
 msgid "Change password"
-msgstr "Change password"
+msgstr "Изменить пароль"
 
-#: accounts/templates/change_password.html:7
+#: accounts/templates/change_password.html:8
 msgid "Change password for"
-msgstr "Change password for"
+msgstr "Изменить пароль для"
 
-#: accounts/templates/change_password.html:11
+#: accounts/templates/change_password.html:12
 msgid "Change"
-msgstr "Change"
+msgstr "Изменить"
 
-#: accounts/templates/edit_profile.html:3
-#: accounts/templates/edit_profile.html:6
+#: accounts/templates/edit_profile.html:5
+#: accounts/templates/edit_profile.html:8
 msgid "Edit profile"
-msgstr "Edit profile"
+msgstr "Редактировать профиль"
 
-#: accounts/templates/edit_profile.html:14
-#: webapp/templates/issues/update.html:11
-#: webapp/templates/projects/update.html:11
+#: accounts/templates/edit_profile.html:16
+#: webapp/templates/issues/update.html:12
+#: webapp/templates/projects/update.html:12
 msgid "Edit"
-msgstr "Edit"
+msgstr "Редактировать"
 
-#: accounts/templates/registration/login.html:3
-#: accounts/templates/registration/login.html:6 webapp/templates/base.html:58
+#: accounts/templates/registration/login.html:4
+#: accounts/templates/registration/login.html:7 webapp/templates/base.html:59
 msgid "Login"
-msgstr "Login"
+msgstr "Логин"
 
-#: accounts/templates/registration/login.html:10
+#: accounts/templates/registration/login.html:11
 msgid "The username or password you entered is incorrect."
-msgstr "The username or password you entered is incorrect."
+msgstr "Логин или пароль были введены неверно"
 
-#: accounts/templates/registration/login.html:13
-#: accounts/templates/users_list.html:7
+#: accounts/templates/registration/login.html:14
+#: accounts/templates/users_list.html:9
 msgid "Username"
-msgstr "Username"
+msgstr "Логин"
 
-#: accounts/templates/registration/login.html:17
+#: accounts/templates/registration/login.html:18
 msgid "Password"
-msgstr "Password"
+msgstr "Пароль"
 
-#: accounts/templates/registration/login.html:21
+#: accounts/templates/registration/login.html:22
 msgid "Enter"
-msgstr "Enter"
+msgstr "Войти"
 
-#: accounts/templates/registration/register.html:5
-#: accounts/templates/registration/register.html:8
-#: accounts/templates/registration/register.html:13
-#: webapp/templates/base.html:59
+#: accounts/templates/registration/register.html:6
+#: accounts/templates/registration/register.html:9
+#: accounts/templates/registration/register.html:14
+#: webapp/templates/base.html:60
 msgid "Register"
-msgstr "Register"
+msgstr "Регистрация"
 
-#: accounts/templates/remove.html:3
+#: accounts/templates/remove.html:5
 msgid "Remove user"
-msgstr "Remove user"
+msgstr "Убрать пользователя"
 
-#: accounts/templates/remove.html:8
+#: accounts/templates/remove.html:10
 msgid "Are you sure want to delete"
-msgstr "Are you sure want to delete"
+msgstr "Вы уверены, что хотите удалить"
 
-#: accounts/templates/remove.html:8
+#: accounts/templates/remove.html:10
 msgid "from the project"
-msgstr "from the project"
+msgstr "из проекта"
 
-#: accounts/templates/remove.html:13 webapp/templates/issues/delete.html:13
-#: webapp/templates/projects/delete.html:13
+#: accounts/templates/remove.html:15 webapp/templates/issues/delete.html:15
+#: webapp/templates/projects/delete.html:15
 msgid "Yes"
-msgstr "Yes"
+msgstr "Да"
 
-#: accounts/templates/remove.html:15 webapp/templates/issues/delete.html:14
-#: webapp/templates/projects/delete.html:14
+#: accounts/templates/remove.html:17 webapp/templates/issues/delete.html:16
+#: webapp/templates/projects/delete.html:16
 msgid "No"
-msgstr "No"
+msgstr "Нет"
 
-#: accounts/templates/user_detail.html:2 accounts/templates/user_detail.html:4
+#: accounts/templates/user_detail.html:4 accounts/templates/user_detail.html:6
 msgid "'s profile"
-msgstr "'s profile"
-
-#: accounts/templates/user_detail.html:11
-msgid "Username:"
-msgstr "Username"
+msgstr "профиль"
 
 #: accounts/templates/user_detail.html:13
-msgid "First name:"
-msgstr "First name"
+msgid "Username:"
+msgstr "Логин"
 
-#: accounts/templates/user_detail.html:16
-msgid "Last name:"
-msgstr "Last name"
+#: accounts/templates/user_detail.html:15
+msgid "First name:"
+msgstr "Имя"
 
 #: accounts/templates/user_detail.html:18
-msgid "Email:"
-msgstr "Email"
+msgid "Last name:"
+msgstr "Фамилия"
 
 #: accounts/templates/user_detail.html:20
+msgid "Email:"
+msgstr "Электронная почта"
+
+#: accounts/templates/user_detail.html:22
 msgid "Github page:"
-msgstr "Github page"
+msgstr "Гитхаб страница"
 
-#: accounts/templates/user_detail.html:25
+#: accounts/templates/user_detail.html:27
 msgid "Edit account"
-msgstr "Edit account"
+msgstr "Редактировать аккаунт"
 
-#: accounts/templates/user_detail.html:33
+#: accounts/templates/user_detail.html:35
 msgid "About me"
-msgstr "About me"
+msgstr "Обо мне"
 
-#: accounts/templates/user_detail.html:36
+#: accounts/templates/user_detail.html:38
 msgid "My projects"
-msgstr "My projects"
-
-#: accounts/templates/users_list.html:6
-msgid "id"
-msgstr "id"
+msgstr "Мои проекты"
 
 #: accounts/templates/users_list.html:8
+msgid "id"
+msgstr "Номер"
+
+#: accounts/templates/users_list.html:10
 msgid "Email"
-msgstr "Email"
+msgstr "Электронная почта"
 
 #: issue_tracker/settings.py:113
 msgid "English"
-msgstr "English"
+msgstr "Английский"
 
 #: issue_tracker/settings.py:114
 msgid "Russian"
-msgstr "Russian"
+msgstr "Русский"
 
-#: webapp/templates/base.html:18
+#: webapp/forms.py:10
+msgid "IssueFormSummary"
+msgstr "Описание задачи"
+
+#: webapp/forms.py:11
+#, fuzzy
+#| msgid "Description"
+msgid "IssueFormDescription"
+msgstr "Описание"
+
+#: webapp/forms.py:12
+msgid "IssueFormStatus"
+msgstr "Статус задачи"
+
+#: webapp/forms.py:14
+msgid "IssueFormType"
+msgstr "Тип задачи"
+
+#: webapp/forms.py:16
+msgid "IssueFormProject"
+msgstr "Проект"
+
+#: webapp/forms.py:27
+msgid "ProjectFormStartDate"
+msgstr "Дата начала проекта"
+
+#: webapp/forms.py:30
+msgid "ProjectFormFinishDate"
+msgstr "Дата окончания проекта"
+
+#: webapp/forms.py:31
+msgid "ProjectFormProjectName"
+msgstr "Название проекта"
+
+#: webapp/forms.py:33
+msgid "ProjectFormProjectSummary"
+msgstr "Описание проекта"
+
+#: webapp/models.py:30
+msgid "TypeTitle"
+msgstr "Название"
+
+#: webapp/models.py:37
+msgid "StatusTitle"
+msgstr "Название"
+
+#: webapp/models.py:45
+msgid "IssueSummary"
+msgstr "Описание"
+
+#: webapp/models.py:47
+#, fuzzy
+#| msgid "Description"
+msgid "IssueDescription"
+msgstr "Описание"
+
+#: webapp/models.py:48
+#, fuzzy
+#| msgid "Issues"
+msgid "IssueStatus"
+msgstr "Задачи"
+
+#: webapp/models.py:51
+msgid "IssueCreationTime"
+msgstr "Время создания задачи"
+
+#: webapp/models.py:52
+msgid "IssueUpdateTime"
+msgstr "Время обновления задачи"
+
+#: webapp/models.py:60
+msgid "ProjectStartDate"
+msgstr "Дата начала проекта"
+
+#: webapp/models.py:61
+#, fuzzy
+#| msgid "Projects list"
+msgid "ProjectFinishDate"
+msgstr "Список проектов"
+
+#: webapp/models.py:62
+#, fuzzy
+#| msgid "Projects"
+msgid "ProjectName"
+msgstr "Проекты"
+
+#: webapp/models.py:63
+#, fuzzy
+#| msgid "Projects"
+msgid "ProjectSummary"
+msgstr "Проекты"
+
+#: webapp/models.py:64
+#, fuzzy
+#| msgid "Projects"
+msgid "ProjectUsers"
+msgstr "Проекты"
+
+#: webapp/templates/base.html:19
 msgid "Issue Tracker"
-msgstr "Issue Tracker"
+msgstr "Трекер задач"
 
-#: webapp/templates/base.html:21
+#: webapp/templates/base.html:22
 msgid "Issues list"
-msgstr "Issues list"
+msgstr "Список задач"
 
-#: webapp/templates/base.html:24
+#: webapp/templates/base.html:25
 msgid "Projects list"
-msgstr "Projects list"
+msgstr "Список проектов"
 
-#: webapp/templates/base.html:28
+#: webapp/templates/base.html:29
 msgid "Users list"
-msgstr "Users list"
+msgstr "Список пользователей"
 
-#: webapp/templates/base.html:34
+#: webapp/templates/base.html:35
 msgid "Menu"
-msgstr "Menu"
+msgstr "Меню"
 
-#: webapp/templates/base.html:38
+#: webapp/templates/base.html:39
 msgid "Create a new project"
-msgstr "Create a new project"
+msgstr "Создать новый проект"
 
-#: webapp/templates/base.html:43
+#: webapp/templates/base.html:44
 msgid "Create a new issue"
-msgstr "Create a new issue"
+msgstr "Создать новую задачу"
 
-#: webapp/templates/base.html:55
+#: webapp/templates/base.html:56
 msgid "Logout"
-msgstr "Logout"
+msgstr "Выйти"
 
-#: webapp/templates/issues/create.html:4 webapp/templates/issues/create.html:8
+#: webapp/templates/issues/create.html:5 webapp/templates/issues/create.html:9
 msgid "Create new issue"
-msgstr "Create new issue"
+msgstr "Создать новую задачу"
 
-#: webapp/templates/issues/create.html:11
-#: webapp/templates/projects/create.html:11
+#: webapp/templates/issues/create.html:12
+#: webapp/templates/projects/create.html:12
 msgid "Create"
-msgstr "Create"
+msgstr "Создать"
 
-#: webapp/templates/issues/delete.html:3
+#: webapp/templates/issues/delete.html:5
 msgid "Delete Issue"
-msgstr "Delete Issue"
+msgstr "Удалить задачу"
 
-#: webapp/templates/issues/delete.html:8
+#: webapp/templates/issues/delete.html:10
 msgid "Are you sure want to delete issue"
-msgstr "Are you sure want to delete issue"
-
-#: webapp/templates/issues/detail.html:9
-#: webapp/templates/projects/detail.html:9
-msgid "Description"
-msgstr "Description"
+msgstr "Вы уверены, что хотите удалить задачу"
 
 #: webapp/templates/issues/detail.html:10
-msgid "Created at"
-msgstr "Created at"
+#: webapp/templates/projects/detail.html:10
+msgid "Description"
+msgstr "Описание"
 
 #: webapp/templates/issues/detail.html:11
+msgid "Created at"
+msgstr "Создано"
+
+#: webapp/templates/issues/detail.html:12
 msgid "Updated at"
-msgstr "Updated at"
+msgstr "Обновлено"
 
-#: webapp/templates/issues/index.html:3 webapp/templates/projects/index.html:3
+#: webapp/templates/issues/index.html:4 webapp/templates/projects/index.html:4
 msgid "Main page"
-msgstr "Main page"
+msgstr "Главная страница"
 
-#: webapp/templates/issues/index.html:6
+#: webapp/templates/issues/index.html:7
 msgid "Issues"
-msgstr "Issues"
+msgstr "Задачи"
 
-#: webapp/templates/issues/index.html:20
-#: webapp/templates/projects/detail.html:41
+#: webapp/templates/issues/index.html:21
+#: webapp/templates/projects/detail.html:42
 msgid "Last updated"
-msgstr "Last updated"
+msgstr "Обновлено в последний раз"
 
-#: webapp/templates/issues/index.html:25
-#: webapp/templates/projects/detail.html:46
+#: webapp/templates/issues/index.html:26
+#: webapp/templates/projects/detail.html:47
 msgid "No tasks found"
-msgstr "No tasks found"
+msgstr "Задачи не найдены"
 
-#: webapp/templates/issues/update.html:4 webapp/templates/issues/update.html:8
+#: webapp/templates/issues/update.html:5 webapp/templates/issues/update.html:9
 msgid "Edit issue"
-msgstr "Edit issue"
+msgstr "Редактировать задачу"
 
-#: webapp/templates/partial/pagination.html:4
+#: webapp/templates/partial/pagination.html:6
 msgid "Previous"
-msgstr "Previous"
+msgstr "Предыдущая"
 
-#: webapp/templates/partial/pagination.html:14
+#: webapp/templates/partial/pagination.html:16
 msgid "Next"
-msgstr "Next"
+msgstr "Следующая"
 
-#: webapp/templates/partial/project_list.html:13
-msgid "Starting date:"
-msgstr "Starting date:"
+#: webapp/templates/partial/project_list.html:15
+msgid "Starting date"
+msgstr "Дата начала"
 
-#: webapp/templates/partial/project_list.html:14
-msgid "Deadline:"
-msgstr "Deadline"
+#: webapp/templates/partial/project_list.html:16
+#: webapp/templates/projects/detail.html:12
+msgid "Deadline"
+msgstr "Дата окончания"
 
-#: webapp/templates/partial/project_list.html:19
+#: webapp/templates/partial/project_list.html:21
 msgid "No projects found"
-msgstr "No projects found"
+msgstr "Проекты не были найдены"
 
-#: webapp/templates/partial/search_form.html:2
-#: webapp/templates/partial/search_form.html:3
+#: webapp/templates/partial/search_form.html:4
+#: webapp/templates/partial/search_form.html:5
 msgid "Search"
-msgstr "Search"
+msgstr "Поиск"
 
-#: webapp/templates/projects/create.html:4
-#: webapp/templates/projects/create.html:8
+#: webapp/templates/projects/create.html:5
+#: webapp/templates/projects/create.html:9
 msgid "Create new project"
-msgstr "Create new project"
+msgstr "Создать новый проект"
 
-#: webapp/templates/projects/delete.html:3
+#: webapp/templates/projects/delete.html:5
 msgid "Delete project"
-msgstr "Delete project"
+msgstr "Удалить проект"
 
-#: webapp/templates/projects/delete.html:8
+#: webapp/templates/projects/delete.html:10
 msgid "Are you sure want to delete project"
-msgstr "Are you sure want to delete project"
+msgstr "Вы уверены что хотите удалить проект"
 
-#: webapp/templates/projects/detail.html:5
+#: webapp/templates/projects/detail.html:6
 msgid "Details"
-msgstr "Details"
-
-#: webapp/templates/projects/detail.html:10
-msgid "Started at"
-msgstr "Started at"
+msgstr "Детали"
 
 #: webapp/templates/projects/detail.html:11
-msgid "Deadline"
-msgstr "Deadline"
+msgid "Started at"
+msgstr "Дата начала"
 
-#: webapp/templates/projects/detail.html:13
+#: webapp/templates/projects/detail.html:14
 msgid "Participants"
-msgstr "Participants"
+msgstr "Участники"
 
-#: webapp/templates/projects/detail.html:19
+#: webapp/templates/projects/detail.html:20
 msgid "No participants found."
-msgstr "No participants found"
+msgstr "Участники не были найдены"
 
-#: webapp/templates/projects/detail.html:22
+#: webapp/templates/projects/detail.html:23
 msgid "Add a new user "
-msgstr "Add a new user"
+msgstr "Добавить нового пользователя"
 
-#: webapp/templates/projects/index.html:6
+#: webapp/templates/projects/index.html:7
 msgid "Projects"
-msgstr "Projects"
+msgstr "Проекты"
 
-#: webapp/templates/projects/update.html:4
-#: webapp/templates/projects/update.html:8
+#: webapp/templates/projects/update.html:5
+#: webapp/templates/projects/update.html:9
 msgid "Edit project"
-msgstr "Edit project"
+msgstr "Редактировать проект"
+
+#, fuzzy
+#~| msgid "Username"
+#~ msgid "UserFormChangeName"
+#~ msgstr "Имя"
+
+#~ msgid "UserFormChangeSurname"
+#~ msgstr "Фамилия"

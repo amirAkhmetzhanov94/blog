@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
+{% load i18n %}
+
 {% block title %}{% trans "Edit profile" %}{% endblock %}
 
 {% block content %}
-    <h1>{% trans "Edit profile" %}</h1>
+    <h1 class="mb-4">{% trans "Edit profile" %}</h1>
 
     <form action="{% url "accounts:edit_profile" user_obj.pk %}"
           method="post"

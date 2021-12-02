@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-{% block title %}{{ user_obj.username }}{% trans "'s profile" %}{% endblock %}
+{% load i18n %}
+
+{% block title %}{{ user_obj.username }}  {% trans "'s profile" %}{% endblock %}
 {% block content %}
     <h1>{{ user_obj.username }}{% trans "'s profile" %}</h1>
     {% if user_obj.profile.avatar %}
@@ -8,16 +10,16 @@
         <img class="avatar" src="https://pa1.narvii.com/6406/44636fa8fa6911b454828100d653c1e2a428a422_hq.gif" width="250">
     {% endif %}
 
-    <p class="mt-4"><b>{% trans "Username:" %}</b> {{ user_obj.username }}</p>
+    <p class="mt-4"><b>{% trans "Username:" %}: </b> {{ user_obj.username }}</p>
     {% if user_obj.first_name %}
-    <p><b>{% trans "First name:" %}</b> {{ user_obj.first_name }}</p>
+    <p><b>{% trans "First name:" %}: </b> {{ user_obj.first_name }}</p>
     {% endif %}
     {% if user_obj.last_name %}
-    <p><b>{% trans "Last name:" %}</b> {{ user_obj.last_name }}</p>
+    <p><b>{% trans "Last name:" %}: </b> {{ user_obj.last_name }}</p>
     {% endif %}
-    <p><b>{% trans "Email:" %}</b> {{ user_obj.email }}</p>
+    <p><b>{% trans "Email:" %}: </b> {{ user_obj.email }}</p>
     {% if user_obj.profile.github_link %}
-    <p><b>{% trans "Github page:" %}</b> <a href="{{ user_obj.profile.github_link }}">{{ user_obj.profile.github_link }}</a></p>
+    <p><b>{% trans "Github page:" %}: </b> <a href="{{ user_obj.profile.github_link }}">{{ user_obj.profile.github_link }}</a></p>
     {% endif %}
     {% ifequal user user_obj %}
         <p>
