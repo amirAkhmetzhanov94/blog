@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -109,9 +111,25 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
+EXTRA_LANG_INFO = {
+    "kz": {
+        "bidi": False,
+        "code": "kz",
+        "name": "Kazakh",
+        "name_local": "Qazaq"
+    }
+}
+
+
+import django.conf.locale
+
+django.conf.locale.LANG_INFO = dict(django.conf.locale.LANG_INFO, **EXTRA_LANG_INFO)
+
+
 LANGUAGES = [
     ("en", _("English")),
-    ("ru", _("Russian"))
+    ("ru", _("Russian")),
+    ("kz", _("Kazakh"))
 ]
 
 LOCALE_PATHS = [
