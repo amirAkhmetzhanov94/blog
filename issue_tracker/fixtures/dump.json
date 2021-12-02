@@ -3,54 +3,78 @@
   "model": "webapp.type",
   "pk": 1,
   "fields": {
-    "title": "Task"
+    "title": "Задача",
+    "title_en": "Task",
+    "title_ru": "Задача",
+    "title_kz": "Тапсырма"
   }
 },
 {
   "model": "webapp.type",
   "pk": 2,
   "fields": {
-    "title": "Enhancement"
+    "title": "Улучшение",
+    "title_en": "Enhancement",
+    "title_ru": "Улучшение",
+    "title_kz": "Жақсарту"
   }
 },
 {
   "model": "webapp.type",
   "pk": 3,
   "fields": {
-    "title": "Bug"
+    "title": "Баг",
+    "title_en": "Bug",
+    "title_ru": "Баг",
+    "title_kz": "Қате"
   }
 },
 {
   "model": "webapp.status",
   "pk": 1,
   "fields": {
-    "title": "New"
+    "title": "Новый",
+    "title_en": "New",
+    "title_ru": "Новый",
+    "title_kz": "Жана"
   }
 },
 {
   "model": "webapp.status",
   "pk": 2,
   "fields": {
-    "title": "In Progress"
+    "title": "В ходе выполнения",
+    "title_en": "In progress",
+    "title_ru": "В ходе выполнения",
+    "title_kz": "Орындалуда"
   }
 },
 {
   "model": "webapp.status",
   "pk": 3,
   "fields": {
-    "title": "Done"
+    "title": "Выполнено",
+    "title_en": "Done",
+    "title_ru": "Выполнено",
+    "title_kz": "Дайын"
   }
 },
 {
   "model": "webapp.issue",
   "pk": 1,
   "fields": {
-    "summary": "Task 1 updated",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque libero nisi, gravida nec tempor at, mattis eu purus. Nunc finibus, nulla sed euismod interdum, tortor mi aliquet lacus, vel suscipit augue leo non erat. Praesent ut ex turpis. Curabitur pellentesque felis mauris, non convallis libero aliquet id. Nunc a placerat tellus. Nulla lectus lectus, scelerisque a neque a, molestie dignissim est. Cras maximus fermentum risus, sit amet bibendum massa molestie ultricies. Sed neque nibh, facilisis vitae molestie nec, tempor vitae massa. Vivamus blandit mi orci, faucibus dictum neque mollis eu. Vestibulum velit magna, venenatis eget leo vel, tempor euismod nisi. In et congue purus.",
+    "summary": "Задача 1",
+    "summary_en": "Task 1",
+    "summary_ru": "Задача 1",
+    "summary_kz": "Тапсырма 1",
+    "description": "Удовлетворенный передачей зависимого довольного джентльмена приятным быть. Ордер частных румян удален в равной степени если. Доставленное уныние, необходимое возражение, господин господин победил. Мистер Чувство в основном сердечное в делах. Вода приурочена к глупости, понимая, если о правда. Неосторожность привела ему его к сочувствию. Большое выше быть к средствам. Дэшвуд сделана посильнее. Но осмотрительность часто не влияет на восхищение всем.\r\n\r\nМиддлтон терпимо и искренне не доверяет ей, мальчику. Добавил и предложил приготовить насколько сердечные два обещания. Хорошо кто ставил допустим но поинтересоваться компакт подготовить все поставить. Добавлены главные деревья, но номера думаю могут. Калитка делает манеру, которую другие казались способной скорее в. Превосходное собственное открытие бесчувственной сладости вопросы джентльмен. Застенчивость главы имеет значение, если упомянуть мысли.",
+    "description_en": "Satisfied conveying an dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do mr prevailed. Mr feeling do chiefly cordial in do. Water timed folly right aware if oh truth. Imprudence attachment him his for sympathize. Large above be to means. Dashwood do provided stronger is. But discretion frequently sir the she instrument unaffected admiration everything.\r\n\r\nTolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may. Wicket do manner others seemed enable rather in. Excellent own discovery unfeeling sweetness questions the gentleman. Chapter shyness matters mr parlors if mention thought",
+    "description_ru": "Удовлетворенный передачей зависимого довольного джентльмена приятным быть. Ордер частных румян удален в равной степени если. Доставленное уныние, необходимое возражение, господин господин победил. Мистер Чувство в основном сердечное в делах. Вода приурочена к глупости, понимая, если о правда. Неосторожность привела ему его к сочувствию. Большое выше быть к средствам. Дэшвуд сделана посильнее. Но осмотрительность часто не влияет на восхищение всем.\r\n\r\nМиддлтон терпимо и искренне не доверяет ей, мальчику. Добавил и предложил приготовить насколько сердечные два обещания. Хорошо кто ставил допустим но поинтересоваться компакт подготовить все поставить. Добавлены главные деревья, но номера думаю могут. Калитка делает манеру, которую другие казались способной скорее в. Превосходное собственное открытие бесчувственной сладости вопросы джентльмен. Застенчивость главы имеет значение, если упомянуть мысли.",
+    "description_kz": "Тәуелді қанағаттанғанды жеткізуге қанағаттанған ол джентльмен макул болады. Варранттың жеке қызаруы бірдей толығымен жойылды, егер. Жеткізілген көңіл-күй қажетті қарсылық до mr басым болды. Мистер сезім, ең алдымен, мейірімді. Су уақытты ақымақтық дұрыс біледі, егер о шындық. Оның жанашырлығы үшін абайсыздық. Үлкен жоғарыда білдіреді. Dashwood күшті қамтамасыз етеді. Бірақ ақыл-парасат жиі таңдануға әсер етпейтін.\r\n\r\nМиддлтон шын жүректен шыдамдылықпен оған қатты сенбейді. Қосу және ұсынуды дайындау қалай шын жүректен екі уәде. Кім жапсырылған делік, бірақ ықшамдалған барлық қоюға дайындау. Негізгі ағаштар қосылды, бірақ бөлмелер мүмкін деп ойлаймын. Викет жасау тәсілі басқаларға көбірек мүмкіндік береді. Тарау ұялшақтық маңызды болып табылады мырза салондары, егер ой айтылған.",
     "status": 1,
-    "creation_time": "2021-10-08T22:11:47.422Z",
-    "update_time": "2021-10-31T10:48:55.427Z",
-    "project": 2,
+    "creation_time": "2021-12-02T11:13:45.569Z",
+    "update_time": "2021-12-02T11:13:45.569Z",
+    "project": 1,
     "type": [
       1
     ]
@@ -60,102 +84,18 @@
   "model": "webapp.issue",
   "pk": 2,
   "fields": {
-    "summary": "Task 2",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque libero nisi, gravida nec tempor at, mattis eu purus. Nunc finibus, nulla sed euismod interdum, tortor mi aliquet lacus, vel suscipit augue leo non erat. Praesent ut ex turpis. Curabitur pellentesque felis mauris, non convallis libero aliquet id. Nunc a placerat tellus. Nulla lectus lectus, scelerisque a neque a, molestie dignissim est. Cras maximus fermentum risus, sit amet bibendum massa molestie ultricies. Sed neque nibh, facilisis vitae molestie nec, tempor vitae massa. Vivamus blandit mi orci, faucibus dictum neque mollis eu. Vestibulum velit magna, venenatis eget leo vel, tempor euismod nisi. In et congue purus.",
-    "status": 1,
-    "creation_time": "2021-10-08T22:11:55.530Z",
-    "update_time": "2021-10-08T22:11:55.530Z",
-    "project": 2,
-    "type": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 5,
-  "fields": {
-    "summary": "Task 25",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus proin nibh. Nibh venenatis cras sed felis eget velit. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu. Elementum tempus egestas sed sed. Vitae tortor condimentum lacinia quis vel. At varius vel pharetra vel turpis nunc eget lorem. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Sed risus ultricies tristique nulla aliquet. Sed risus pretium quam vulputate dignissim suspendisse in est. Non odio euismod lacinia at quis risus sed vulputate. Mauris augue neque gravida in fermentum.",
-    "status": 3,
-    "creation_time": "2021-10-29T16:29:33.577Z",
-    "update_time": "2021-10-29T16:29:33.591Z",
+    "summary": "Задача 2",
+    "summary_en": "Task 2",
+    "summary_ru": "Задача 2",
+    "summary_kz": "Тапсырма 2",
+    "description": "Удовлетворенный передачей зависимого довольного джентльмена приятным быть. Ордер частных румян удален в равной степени если. Доставленное уныние, необходимое возражение, господин господин победил. Мистер Чувство в основном сердечное в делах. Вода приурочена к глупости, понимая, если о правда. Неосторожность привела ему его к сочувствию. Большое выше быть к средствам. Дэшвуд сделана посильнее. Но осмотрительность часто не влияет на восхищение всем. Миддлтон терпимо и искренне не доверяет ей, мальчику. Добавил и предложил приготовить насколько сердечные два обещания. Хорошо кто ставил допустим но поинтересоваться компакт подготовить все поставить. Добавлены главные деревья, но номера думаю могут. Калитка делает манеру, которую другие казались способной скорее в. Превосходное собственное открытие бесчувственной сладости вопросы джентльмен. Застенчивость главы имеет значение, если упомянуть мысли.",
+    "description_en": "Satisfied with the transfer of a dependent contented gentleman pleasant to be. Private blush order removed equally if. Despondency delivered, a necessary objection, the master won. Mister Feeling is mostly cordial in business. Water is confined to stupidity, realizing if the truth. Carelessness led him to sympathy. Great higher to be towards the media. Dashwood is made stronger. But discretion often does not affect admiration for everyone. Middleton tolerantly and sincerely does not trust her, the boy. He added and offered to prepare two promises that are hearty. Well, who put it is admissible, but ask the CD to prepare everything to put it. Added main trees, but numbers think they can. The wicket does a manner that others seemed capable rather of. Superb self-discovery of unfeeling sweetness questions gentleman. The shyness of the chapter matters when it comes to thoughts.",
+    "description_ru": "Удовлетворенный передачей зависимого довольного джентльмена приятным быть. Ордер частных румян удален в равной степени если. Доставленное уныние, необходимое возражение, господин господин победил. Мистер Чувство в основном сердечное в делах. Вода приурочена к глупости, понимая, если о правда. Неосторожность привела ему его к сочувствию. Большое выше быть к средствам. Дэшвуд сделана посильнее. Но осмотрительность часто не влияет на восхищение всем. Миддлтон терпимо и искренне не доверяет ей, мальчику. Добавил и предложил приготовить насколько сердечные два обещания. Хорошо кто ставил допустим но поинтересоваться компакт подготовить все поставить. Добавлены главные деревья, но номера думаю могут. Калитка делает манеру, которую другие казались способной скорее в. Превосходное собственное открытие бесчувственной сладости вопросы джентльмен. Застенчивость главы имеет значение, если упомянуть мысли.",
+    "description_kz": "Тәуелді қанағаттанған джентльменнің берілуіне көңілі толады. Жеке қызару реті бірдей жойылады, егер. Үмітсіздік, қажетті қарсылық, шебер жеңді. Мистер Фелинг бизнесте негізінен мейірімді. Су ақымақтықпен шектеледі, егер шындық болса. Абайсыздық оны жанашырлыққа жетеледі. Бұқаралық ақпарат құралдарына қатысты болу өте жоғары. Дашвуд күшейтілген. Бірақ парасаттылық көбіне барлығының таңдануына әсер етпейді. Миддлтон шыдамдылықпен және шын жүректен оған сенбейді, бала. Ол шын жүректен екі уәдені қосып, дайындауды ұсынды. Кім қойған дұрыс, бірақ компакт-дискіден оны қою үшін бәрін дайындауды сұраңыз. Негізгі ағаштар қосылды, бірақ сандар мүмкін деп санайды. Викет басқалар қабілетті болып көрінетін әдісті жасайды. Сезімсіз тәттіліктің керемет өзін-өзі ашуы мырзаға сұрақтар қояды. Тараудағы ұялшақтық ойға келгенде маңызды.",
+    "status": 2,
+    "creation_time": "2021-12-02T11:38:39.447Z",
+    "update_time": "2021-12-02T11:40:02.326Z",
     "project": 1,
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 6,
-  "fields": {
-    "summary": "Task 3",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus proin nibh. Nibh venenatis cras sed felis eget velit. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu. Elementum tempus egestas sed sed. Vitae tortor condimentum lacinia quis vel. At varius vel pharetra vel turpis nunc eget lorem. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Sed risus ultricies tristique nulla aliquet. Sed risus pretium quam vulputate dignissim suspendisse in est. Non odio euismod lacinia at quis risus sed vulputate. Mauris augue neque gravida in fermentum.",
-    "status": 3,
-    "creation_time": "2021-10-29T16:29:58.665Z",
-    "update_time": "2021-10-29T16:29:58.676Z",
-    "project": 1,
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 37,
-  "fields": {
-    "summary": "Task 2",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus proin nibh. Nibh venenatis cras sed felis eget velit. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu. Elementum tempus egestas sed sed. Vitae tortor condimentum lacinia quis vel. At varius vel pharetra vel turpis nunc eget lorem. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Sed risus ultricies tristique nulla aliquet. Sed risus pretium quam vulputate dignissim suspendisse in est. Non odio euismod lacinia at quis risus sed vulputate. Mauris augue neque gravida in fermentum.",
-    "status": 1,
-    "creation_time": "2021-10-29T16:41:36.665Z",
-    "update_time": "2021-10-29T16:41:36.687Z",
-    "project": 2,
-    "type": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 40,
-  "fields": {
-    "summary": "Task 234",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "status": 1,
-    "creation_time": "2021-10-30T08:35:20.309Z",
-    "update_time": "2021-10-31T06:43:28.966Z",
-    "project": 10,
-    "type": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 42,
-  "fields": {
-    "summary": "Task 493",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "status": 1,
-    "creation_time": "2021-10-31T06:55:01.490Z",
-    "update_time": "2021-10-31T06:55:01.490Z",
-    "project": 1,
-    "type": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 50,
-  "fields": {
-    "summary": "Test issue",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "status": 1,
-    "creation_time": "2021-11-01T07:54:07.179Z",
-    "update_time": "2021-11-01T07:54:07.195Z",
-    "project": 11,
     "type": [
       1
     ]
@@ -165,112 +105,16 @@
   "model": "webapp.project",
   "pk": 1,
   "fields": {
-    "start_date": "2021-10-01",
-    "finish_date": "2021-11-30",
-    "project_name": "Lorem 1",
-    "project_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus proin nibh. Nibh venenatis cras sed felis eget velit. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu. Elementum tempus egestas sed sed. Vitae tortor condimentum lacinia quis vel. At varius vel pharetra vel turpis nunc eget lorem. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Sed risus ultricies tristique nulla aliquet. Sed risus pretium quam vulputate dignissim suspendisse in est. Non odio euismod lacinia at quis risus sed vulputate. Mauris augue neque gravida in fermentum.",
-    "users": [
-      1,
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.project",
-  "pk": 2,
-  "fields": {
-    "start_date": "2021-10-08",
-    "finish_date": "2021-10-28",
-    "project_name": "Project 1",
-    "project_summary": "This is project 1",
-    "users": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      7,
-      9,
-      10,
-      11,
-      12
-    ]
-  }
-},
-{
-  "model": "webapp.project",
-  "pk": 9,
-  "fields": {
-    "start_date": "2021-11-25",
-    "finish_date": "2021-11-30",
-    "project_name": "Aasd's project",
-    "project_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "users": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      9,
-      10,
-      11,
-      12
-    ]
-  }
-},
-{
-  "model": "webapp.project",
-  "pk": 10,
-  "fields": {
-    "start_date": "2021-09-30",
-    "finish_date": "2022-03-01",
-    "project_name": "Aasd's second project",
-    "project_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "users": [
-      1,
-      2,
-      14,
-      15,
-      16
-    ]
-  }
-},
-{
-  "model": "webapp.project",
-  "pk": 11,
-  "fields": {
-    "start_date": "2021-12-15",
-    "finish_date": "2021-11-16",
-    "project_name": "Test project",
-    "project_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "users": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.project",
-  "pk": 12,
-  "fields": {
-    "start_date": "2021-11-03",
-    "finish_date": "2021-11-09",
-    "project_name": "asdasdas",
-    "project_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "users": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.project",
-  "pk": 13,
-  "fields": {
-    "start_date": "2021-11-18",
-    "finish_date": "2022-01-04",
-    "project_name": "asdasdasdasd",
-    "project_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "start_date": "2021-12-01",
+    "finish_date": "2021-12-23",
+    "project_name": "Проект 1",
+    "project_name_en": "Project 1",
+    "project_name_ru": "Проект 1",
+    "project_name_kz": "Жоба 1",
+    "project_summary": "После версий GoldHEN 1.00 и GoldHEN 1.1 я с нетерпением жду возможности попробовать последнюю версию GoldHEN 2.0b PS4 Homebrew Enabler с сервером BinLoader от SiSTR0 через @Al Azif в Twitter для запуска PS4 PKG Games, поскольку моя PlayStation 4 Pro очень и очень упрямая. 🐥: idea: С недавно обновленным Payload Guest PS4 PKG, фиксированным двоичным установщиком пакета sender.exe и бета-загрузчиком бункера GoldHEN 2.0, включенным в PlayStation 4 Scene, разработчик Аль Азиф отмечает, что необходимо использовать только ОДИН РАЗ и запускать столько полезных нагрузок PS4, сколько нужно, без повторно использовать консоль PS4 для каждого. Скачать: GoldHEN_v2.0b.7z (930 КБ - включает goldhen_2.0b_505.bin, goldhen_2.0b_672.bin, goldhen_2.0b_702.bin, goldhen_2.0b_750.bin, goldhen_2.0b_751.bin, goldhen_2.0b_755.bin полезные нагрузки и binloader_http_test .zip с Enable-Browser.bin) / GIT / DNS Аль Азифа (в настоящее время обновлен только до GoldHEN 2.0b для 5.05) / Загрузчик полезной нагрузки для GoldHEN 2.0 Для использования после использования консоли PS4 просто отправьте полезную нагрузку с помощью инструментов и следуя все руководства, ссылки на которые есть ЗДЕСЬ в статье.",
+    "project_summary_en": "Following the GoldHEN 1.00 and GoldHEN 1.1 revisions, I look forward to trying the latest GoldHEN 2.0b PS4 Homebrew Enabler with BinLoader Server by SiSTR0 via @Al Azif on Twitter to run PS4 PKG Games as my PlayStation 4 Pro is very, very stubborn. 🐥 :idea: With the recently updated Payload Guest PS4 PKG, fixed sender.exe package installer binary and Beta GoldHEN 2.0 Bin Loader included PlayStation 4 Scene developer Al Azif notes it's only necessary to exploit ONCE and run as many PS4 Payloads as desired without having to re-exploit the PS4 console for each. Download: GoldHEN_v2.0b.7z (930 KB - includes goldhen_2.0b_505.bin, goldhen_2.0b_672.bin, goldhen_2.0b_702.bin, goldhen_2.0b_750.bin, goldhen_2.0b_751.bin, goldhen_2.0b_755.bin payloads and binloader_http_test.zip with Enable-Browser.bin) / GIT / Al Azif's DNS (currently only updated to GoldHEN 2.0b for 5.05) / Payload Loader for GoldHEN 2.0 To use, after Exploiting Your PS4 Console simply send the payload using the tools and following the guides all linked HERE in the article.",
+    "project_summary_ru": "После версий GoldHEN 1.00 и GoldHEN 1.1 я с нетерпением жду возможности попробовать последнюю версию GoldHEN 2.0b PS4 Homebrew Enabler с сервером BinLoader от SiSTR0 через @Al Azif в Twitter для запуска PS4 PKG Games, поскольку моя PlayStation 4 Pro очень и очень упрямая. 🐥: idea: С недавно обновленным Payload Guest PS4 PKG, фиксированным двоичным установщиком пакета sender.exe и бета-загрузчиком бункера GoldHEN 2.0, включенным в PlayStation 4 Scene, разработчик Аль Азиф отмечает, что необходимо использовать только ОДИН РАЗ и запускать столько полезных нагрузок PS4, сколько нужно, без повторно использовать консоль PS4 для каждого. Скачать: GoldHEN_v2.0b.7z (930 КБ - включает goldhen_2.0b_505.bin, goldhen_2.0b_672.bin, goldhen_2.0b_702.bin, goldhen_2.0b_750.bin, goldhen_2.0b_751.bin, goldhen_2.0b_755.bin полезные нагрузки и binloader_http_test .zip с Enable-Browser.bin) / GIT / DNS Аль Азифа (в настоящее время обновлен только до GoldHEN 2.0b для 5.05) / Загрузчик полезной нагрузки для GoldHEN 2.0 Для использования после использования консоли PS4 просто отправьте полезную нагрузку с помощью инструментов и следуя все руководства, ссылки на которые есть ЗДЕСЬ в статье.",
+    "project_summary_kz": "GoldHEN 1.00 және GoldHEN 1.1 нұсқаларынан кейін мен PS4 PKG ойындарын іске қосу үшін Twitter-дегі @Al Azif арқылы SiSTR0 ұсынған BinLoader сервері бар GoldHEN 2.0b PS4 Homebrew қосқышының соңғы нұсқасын қолданып көруді асыға күтемін, өйткені менің PlayStation 4 Pro өте, өте қыңыр. 🐥 :idea: Жақында жаңартылған Payload Guest PS4 PKG, бекітілген sender.exe пакетін орнатушы екілік және Beta GoldHEN 2.0 Bin Loader қосылған PlayStation 4 Scene әзірлеушісі Аль Азиф тек БІР рет пайдалану және PS4 пайдалы жүктемелерін қажетсіз іске қосу қажет екенін атап өтеді. әрқайсысы үшін PS4 консолін қайта пайдалану үшін. Жүктеп алу: GoldHEN_v2.0b.7z (930 КБ - мыналарды қамтиды - goldhen_2.0b_505.bin, goldhen_2.0b_672.bin, goldhen_2.0b_702.bin, goldhen_2.0b_750.bin, goldhen_2.0b_751.bin, goldhen_2.0b_751.bin, goldhen_55.binb pay_loads_55.bin. .zip with Enable-Browser.bin) / GIT / Al Azif's DNS (қазіргі уақытта тек GoldHEN 2.0b нұсқасына 5.05 нұсқасына жаңартылған) / GoldHEN 2.0 үшін пайдалы жүк тиегіш. Қолдану үшін PS4 консолін пайдаланғаннан кейін құралдарды пайдаланып пайдалы жүктемені жіберіңіз және келесі нұсқауларды орындаңыз. нұсқаулықтардың барлығы осы мақалада сілтеме жасалған.",
     "users": [
       1
     ]
