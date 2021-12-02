@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 12:08+0000\n"
+"POT-Creation-Date: 2021-12-02 12:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,39 +25,51 @@ msgstr "Электрондық поштасы"
 msgid "RegistraionFormUsername"
 msgstr "Пайдаланушы логин"
 
-#: accounts/forms.py:27
+#: accounts/forms.py:12
+msgid "RegistrationFormFirstName"
+msgstr "Аты"
+
+#: accounts/forms.py:13
+msgid "RegistrationFormLastName"
+msgstr "Тегі"
+
+#: accounts/forms.py:14
+msgid "RegistrationFormConfirmationPassword"
+msgstr "Құпия сөзді растау"
+
+#: accounts/forms.py:30
 msgid "UserChangeFormFirstName"
 msgstr "Аты"
 
-#: accounts/forms.py:28
+#: accounts/forms.py:31
 msgid "UserChangeFormLastName"
 msgstr "Тегі"
 
-#: accounts/forms.py:29
+#: accounts/forms.py:32
 msgid "UserChangeFormEmail"
 msgstr "Электрондық поштасы"
 
-#: accounts/forms.py:36 accounts/models.py:14
+#: accounts/forms.py:40 accounts/models.py:14
 msgid "ProfileAvatar"
 msgstr "Аватар"
 
-#: accounts/forms.py:37 accounts/models.py:16
+#: accounts/forms.py:41 accounts/models.py:16
 msgid "ProfileGithub"
 msgstr "Гитхаб"
 
-#: accounts/forms.py:38 accounts/models.py:18
+#: accounts/forms.py:42 accounts/models.py:18
 msgid "ProfileAbout"
 msgstr "Туралы"
 
-#: accounts/forms.py:46
+#: accounts/forms.py:50
 msgid "PasswordFormOldPass"
 msgstr "Ескі Құпия сөз"
 
-#: accounts/forms.py:48
+#: accounts/forms.py:52
 msgid "PasswordFormNewPassword"
 msgstr "Жаңа Құпия Сөз"
 
-#: accounts/forms.py:50
+#: accounts/forms.py:54
 msgid "PasswordFormConfirmationPass"
 msgstr "Құпия сөзді растау"
 

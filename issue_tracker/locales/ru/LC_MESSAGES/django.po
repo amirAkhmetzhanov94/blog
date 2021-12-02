@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 12:08+0000\n"
+"POT-Creation-Date: 2021-12-02 12:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,39 +28,51 @@ msgstr "Электронная почта"
 msgid "RegistraionFormUsername"
 msgstr "Логин"
 
-#: accounts/forms.py:27
+#: accounts/forms.py:12
+msgid "RegistrationFormFirstName"
+msgstr "Имя пользователя"
+
+#: accounts/forms.py:13
+msgid "RegistrationFormLastName"
+msgstr "Фамилия"
+
+#: accounts/forms.py:14
+msgid "RegistrationFormConfirmationPassword"
+msgstr "Подтверждение пароля"
+
+#: accounts/forms.py:30
 msgid "UserChangeFormFirstName"
 msgstr "Имя"
 
-#: accounts/forms.py:28
+#: accounts/forms.py:31
 msgid "UserChangeFormLastName"
 msgstr "Фамилия"
 
-#: accounts/forms.py:29
+#: accounts/forms.py:32
 msgid "UserChangeFormEmail"
 msgstr "Электронная почта"
 
-#: accounts/forms.py:36 accounts/models.py:14
+#: accounts/forms.py:40 accounts/models.py:14
 msgid "ProfileAvatar"
 msgstr "Аватар"
 
-#: accounts/forms.py:37 accounts/models.py:16
+#: accounts/forms.py:41 accounts/models.py:16
 msgid "ProfileGithub"
 msgstr "Гитхаб"
 
-#: accounts/forms.py:38 accounts/models.py:18
+#: accounts/forms.py:42 accounts/models.py:18
 msgid "ProfileAbout"
 msgstr "О пользователе"
 
-#: accounts/forms.py:46
+#: accounts/forms.py:50
 msgid "PasswordFormOldPass"
 msgstr "Старый пароль"
 
-#: accounts/forms.py:48
+#: accounts/forms.py:52
 msgid "PasswordFormNewPassword"
 msgstr "Новый пароль"
 
-#: accounts/forms.py:50
+#: accounts/forms.py:54
 msgid "PasswordFormConfirmationPass"
 msgstr "Подтверждение пароля"
 
@@ -229,7 +241,7 @@ msgstr "Русский"
 
 #: issue_tracker/settings.py:132
 msgid "Kazakh"
-msgstr ""
+msgstr "Казахский"
 
 #: webapp/forms.py:11
 msgid "IssueFormSummary"
@@ -276,14 +288,10 @@ msgid "IssueSummary"
 msgstr "Описание"
 
 #: webapp/models.py:47
-#, fuzzy
-#| msgid "Description"
 msgid "IssueDescription"
 msgstr "Описание"
 
 #: webapp/models.py:48
-#, fuzzy
-#| msgid "Issues"
 msgid "IssueStatus"
 msgstr "Задачи"
 
@@ -300,26 +308,18 @@ msgid "ProjectStartDate"
 msgstr "Дата начала проекта"
 
 #: webapp/models.py:61
-#, fuzzy
-#| msgid "Projects list"
 msgid "ProjectFinishDate"
 msgstr "Список проектов"
 
 #: webapp/models.py:62
-#, fuzzy
-#| msgid "Projects"
 msgid "ProjectName"
 msgstr "Проекты"
 
 #: webapp/models.py:63
-#, fuzzy
-#| msgid "Projects"
 msgid "ProjectSummary"
 msgstr "Проекты"
 
 #: webapp/models.py:64
-#, fuzzy
-#| msgid "Projects"
 msgid "ProjectUsers"
 msgstr "Проекты"
 
